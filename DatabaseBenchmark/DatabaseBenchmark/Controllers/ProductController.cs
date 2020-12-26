@@ -17,7 +17,7 @@ namespace DatabaseBenchmark.Web.Controllers
         public IActionResult Index()
         {
             ProductModel productModel = new ProductModel();
-            productModel.Products = productModel.generateProduct();
+            productModel.generateJsonData(10);
             return View(productModel);
 
             //ProductModel productModel = new ProductModel();

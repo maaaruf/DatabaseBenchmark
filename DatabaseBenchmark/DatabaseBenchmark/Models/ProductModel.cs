@@ -14,6 +14,9 @@ namespace DatabaseBenchmark.Web.Models
         public string Tittle { get; set; }
         public string Brand { get; set; }
         public double Price { get; set; }
+
+        public string Key { get; set; }
+        public string Value { get; set; }
         public IList<Product> Products { get; set; }
         public IList<JsonObject> Jsons { get; set; }
 
@@ -30,14 +33,15 @@ namespace DatabaseBenchmark.Web.Models
         public void generateJsonData(int count)
         {
             ObjectToJsonConverver objectToJsonConverver = new ObjectToJsonConverver();
+            Jsons = new List<JsonObject>();
 
             while (count > 0)
             {
                 string data = objectToJsonConverver.JsonConverter(generateProduct());
                 JsonObject jsonObject = new JsonObject { Key = "Key - " + Guid.NewGuid(), Value = data };
                 Jsons.Add(jsonObject);
+                count--;
             }
-
         }
     }
 }
