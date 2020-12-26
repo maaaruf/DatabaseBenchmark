@@ -2,10 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>355ebe03-05c4-42f4-afa2-4f0732029986</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseBenchmark.Domain\DatabaseBenchmark.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("355ebe03-05c4-42f4-afa2-4f0732029986")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("DatabaseBenchmark.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

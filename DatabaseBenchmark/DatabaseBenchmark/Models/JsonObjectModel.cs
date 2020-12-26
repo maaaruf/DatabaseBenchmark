@@ -1,5 +1,4 @@
-﻿using DatabaseBenchmark.Models;
-using DatabaseBenchmark.Web.Models.Entity;
+﻿using DatabaseBenchmark.Web.Models.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,24 +6,11 @@ using System.Threading.Tasks;
 
 namespace DatabaseBenchmark.Web.Models
 {
-    public class ProductModel : BaseModel
+    public class JsonObjectModel : BaseModel
     {
-        
-
-        public int productCount { get; set; }
-        public string Tittle { get; set; }
-        public string Brand { get; set; }
-        public double Price { get; set; }
         public string Key { get; set; }
         public string Value { get; set; }
-        public IList<Product> Products { get; set; }
         public IList<JsonObject> Jsons { get; set; }
-
-        public IList<Product> generateProduct()
-        {
-            productCount = 50;
-            return randomDataGenerator.generateProducts(productCount);
-        }
 
 
         public void generateJsonData(int count)
@@ -33,7 +19,10 @@ namespace DatabaseBenchmark.Web.Models
 
             while (count > 0)
             {
-                string data = ObjectToJsonConverter.JsonConverter(generateProduct());
+                string data = ObjectToJsonConverter.JsonConverter(
+                    randomDataGenerator.generate50Products()
+                    );
+
                 JsonObject jsonObject = new JsonObject { Key = "Key - " + Guid.NewGuid(), Value = data };
                 Jsons.Add(jsonObject);
                 count--;

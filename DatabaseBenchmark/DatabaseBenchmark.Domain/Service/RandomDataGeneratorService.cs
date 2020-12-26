@@ -1,5 +1,4 @@
 ﻿using DatabaseBenchmark.Web.Models.Entity;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseBenchmark.Models
 {
-    public class RandomDataGenerator
+    public class RandomDataGeneratorService
     {
         public IList<Product> Products { get; set; }
 
@@ -30,8 +29,11 @@ namespace DatabaseBenchmark.Models
             return Products;
         }
 
+        public IList<Product> generate50Products()
+        {
+            return generateProducts(50);
+        }
 
-        
     }
 
 

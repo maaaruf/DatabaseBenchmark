@@ -1,0 +1,9 @@
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\bin\Debug\netstandard2.0\DatabaseBenchmark.Domain.deps.json
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\bin\Debug\netstandard2.0\DatabaseBenchmark.Domain.dll
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\bin\Debug\netstandard2.0\DatabaseBenchmark.Domain.pdb
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\obj\Debug\netstandard2.0\DatabaseBenchmark.Domain.AssemblyInfoInputs.cache
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\obj\Debug\netstandard2.0\DatabaseBenchmark.Domain.AssemblyInfo.cs
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\obj\Debug\netstandard2.0\DatabaseBenchmark.Domain.csproj.CoreCompileInputs.cache
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\obj\Debug\netstandard2.0\DatabaseBenchmark.Domain.dll
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\obj\Debug\netstandard2.0\DatabaseBenchmark.Domain.pdb
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\obj\Debug\netstandard2.0\DatabaseBenchmark.Domain.csprojAssemblyReference.cache

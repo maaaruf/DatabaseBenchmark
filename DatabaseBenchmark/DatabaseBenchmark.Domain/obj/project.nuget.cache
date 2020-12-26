@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "kvCk6a849QOP+GQvdlI7EM4rEhX3MB8NsAdiHIrLdU593KZT1pQh/EjPpnOCFzjivTZD6jxIpx7WxPJpBjWuow==",
+  "dgSpecHash": "r8CVP2B75z/8wnpz9NxLPL0hum2JeN9zc9NiJEW2XSfsTFJa1lEVtYN2eF33N/ycVSLbeFZTNPbZHVxLNKiIeA==",
   "success": true,
   "projectFilePath": "D:\\Repositories\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark.Domain\\DatabaseBenchmark.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OSL-\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\OSL-\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\OSL-\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\OSL-\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }

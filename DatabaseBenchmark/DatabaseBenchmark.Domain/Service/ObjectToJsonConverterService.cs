@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseBenchmark.Web.Models
 {
-    public class ObjectToJsonConverver
+    public class ObjectToJsonConverterService
     {
         public string JsonConverter(object rawObject)
         {

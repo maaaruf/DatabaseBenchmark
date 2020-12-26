@@ -110,3 +110,5 @@ D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\bin\Debug\
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Debug\netcoreapp3.1\DatabaseBenchmark.Web.csprojAssemblyReference.cache
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Debug\netcoreapp3.1\Razor\Views\Product\Generate.cshtml.g.cs
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\bin\Debug\netcoreapp3.1\DatabaseBenchmark.Domain.dll
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\bin\Debug\netcoreapp3.1\DatabaseBenchmark.Domain.pdb
