@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Benchmark.MVC.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,17 @@ namespace Benchmark.MVC.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            JsonObjectModel model = new JsonObjectModel();
+
+            model.generateProductsJsonsJsonData();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Index(JsonObjectModel model)
+        {
+            model.generateProductsJsonsJsonData();
+            return View(model);
         }
 
         public ActionResult About()
