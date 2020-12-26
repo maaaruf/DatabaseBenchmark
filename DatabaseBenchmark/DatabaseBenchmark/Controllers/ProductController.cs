@@ -1,6 +1,6 @@
-﻿using DatabaseBenchmark.Models;
+﻿using DatabaseBenchmark.Domain.Entity;
+using DatabaseBenchmark.Models;
 using DatabaseBenchmark.Web.Models;
-using DatabaseBenchmark.Web.Models.Entity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,5 @@
-﻿using DatabaseBenchmark.Models;
+﻿using DatabaseBenchmark.Domain.Service;
+using DatabaseBenchmark.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +9,14 @@ namespace DatabaseBenchmark.Web.Models
 {
     public class BaseModel
     {
-        public RandomDataGeneratorService randomDataGenerator { get; set; }
-        public ObjectToJsonConverterService ObjectToJsonConverter { get; set; }
+        public RandomDataGeneratorService _randomDataGenerator { get; set; }
+        public ObjectToJsonConverterService _objectToJsonConverter { get; set; }
+        public JsonDataGeneratorService _jsonDataGenerator { get; set; }
         public BaseModel()
         {
-            randomDataGenerator = new RandomDataGeneratorService();
-            ObjectToJsonConverter = new ObjectToJsonConverterService();
+            _randomDataGenerator = new RandomDataGeneratorService();
+            _objectToJsonConverter = new ObjectToJsonConverterService();
+            _jsonDataGenerator = new JsonDataGeneratorService();
         }
     }
 }

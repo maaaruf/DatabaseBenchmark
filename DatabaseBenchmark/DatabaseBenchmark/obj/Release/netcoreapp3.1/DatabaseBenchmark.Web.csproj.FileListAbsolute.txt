@@ -110,3 +110,5 @@ D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Releas
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Release\netcoreapp3.1\DatabaseBenchmark.Web.dll
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Release\netcoreapp3.1\DatabaseBenchmark.Web.pdb
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Release\netcoreapp3.1\DatabaseBenchmark.Web.genruntimeconfig.cache
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\bin\Release\netcoreapp3.1\DatabaseBenchmark.Domain.dll
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\bin\Release\netcoreapp3.1\DatabaseBenchmark.Domain.pdb

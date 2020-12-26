@@ -1,11 +1,11 @@
-﻿using DatabaseBenchmark.Web.Models.Entity;
+﻿using DatabaseBenchmark.Domain.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace DatabaseBenchmark.Models
+namespace DatabaseBenchmark.Domain.Service
 {
     public class RandomDataGeneratorService
     {
@@ -18,12 +18,13 @@ namespace DatabaseBenchmark.Models
             for(int i=0; i<productCount; i++)
             {
                 Products.Add(
-                    new Web.Models.Entity.Product
+                    new Product
                     {
+                        Id = DateTime.Now.Ticks,
                         Tittle = "Object" + i + Guid.NewGuid(),
                         Brand = "Brand" + i,
                         Price = i
-                    });
+                    }) ;
             }
 
             return Products;

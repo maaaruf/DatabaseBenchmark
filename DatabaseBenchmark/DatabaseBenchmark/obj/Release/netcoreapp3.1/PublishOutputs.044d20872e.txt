@@ -114,5 +114,7 @@ D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Releas
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Release\netcoreapp3.1\PubTmp\Out\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Release\netcoreapp3.1\PubTmp\Out\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Release\netcoreapp3.1\PubTmp\Out\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Release\netcoreapp3.1\PubTmp\Out\DatabaseBenchmark.Domain.dll
+D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Release\netcoreapp3.1\PubTmp\Out\DatabaseBenchmark.Domain.pdb
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Release\netcoreapp3.1\PubTmp\Out\DatabaseBenchmark.Web.Views.dll
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark\obj\Release\netcoreapp3.1\PubTmp\Out\DatabaseBenchmark.Web.Views.pdb

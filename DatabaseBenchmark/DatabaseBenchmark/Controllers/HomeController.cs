@@ -1,4 +1,5 @@
 ﻿using DatabaseBenchmark.Models;
+using DatabaseBenchmark.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -20,7 +21,17 @@ namespace DatabaseBenchmark.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            JsonObjectModel model = new JsonObjectModel();
+
+            model.generateProductsJsonsJsonData();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Index(JsonObjectModel model)
+        {
+            model.generateProductsJsonsJsonData();
+            return View(model);
         }
 
         public IActionResult Privacy()

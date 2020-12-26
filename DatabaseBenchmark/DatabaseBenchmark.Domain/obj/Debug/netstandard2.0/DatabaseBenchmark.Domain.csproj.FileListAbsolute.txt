@@ -6,4 +6,3 @@ D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\obj
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\obj\Debug\netstandard2.0\DatabaseBenchmark.Domain.csproj.CoreCompileInputs.cache
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\obj\Debug\netstandard2.0\DatabaseBenchmark.Domain.dll
 D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\obj\Debug\netstandard2.0\DatabaseBenchmark.Domain.pdb
-D:\Repositories\DatabaseBenchmark\DatabaseBenchmark\DatabaseBenchmark.Domain\obj\Debug\netstandard2.0\DatabaseBenchmark.Domain.csprojAssemblyReference.cache
