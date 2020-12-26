@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace DatabaseBenchmark.Controllers
 {
@@ -22,6 +23,8 @@ namespace DatabaseBenchmark.Controllers
         public IActionResult Index()
         {
             JsonObjectModel model = new JsonObjectModel();
+
+
 
             model.generateProductsJsonsJsonData();
             return View(model);

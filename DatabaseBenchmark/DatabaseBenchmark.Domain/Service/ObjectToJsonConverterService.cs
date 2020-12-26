@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,8 @@ namespace DatabaseBenchmark.Domain.Service
     {
         public string JsonConverter(object rawObject)
         {
-            string json = JsonConvert.SerializeObject(rawObject);
+            string json = JsonSerializer.Serialize(rawObject);
+
             return json;
         }
     }
