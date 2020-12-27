@@ -1,6 +1,12 @@
 ﻿using DatabaseBenchmark.Domain.Entity;
+using DatabaseBenchmark.Domain.Mappings;
+using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
+using NHibernate;
+using NHibernate.Tool.hbm2ddl;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,7 +16,9 @@ namespace Benchmark.MVC.Web.Models
     {
         public string Key { get; set; }
         public string Value { get; set; }
+        [DisplayName("Data Count")]
         public int JsonDataCount { get; set; }
+        public TimeSpan SpendedTime { get; set; }
         public IList<JsonObject> ProductsObjectInJson { get; set; }
 
 
@@ -29,8 +37,24 @@ namespace Benchmark.MVC.Web.Models
             foreach(var item in jsonProducts)
             {
                 string json = _objectToJsonConverter.JsonConverter(item);
-                ProductsObjectInJson.Add(new JsonObject { Key = item.Key, Value = json });
+                JsonObject productData =  new JsonObject { ProductKey = item.Key, ProductValue = json };
+                ProductsObjectInJson.Add(productData);
             }
+
+            DateTime startTime = DateTime.Now;
+
+            foreach (var item in ProductsObjectInJson)
+            {
+                _jsonObjectRepository.Add(new JsonObject { ProductKey = item.ProductKey, ProductValue = item.ProductValue });
+            }
+
+            DateTime endTime = DateTime.Now;
+
+           // TimeSpan duration = DateTime.Parse(time.endTime).Subtract(DateTime.Parse(time.startTime));
+            SpendedTime = endTime.Subtract(startTime);
+
+
         }
+
     }
 }

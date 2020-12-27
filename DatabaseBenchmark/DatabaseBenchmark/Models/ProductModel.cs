@@ -35,7 +35,7 @@ namespace DatabaseBenchmark.Web.Models
             {
                 var products = generateProduct();
                 string data = _objectToJsonConverter.JsonConverter(products);
-                JsonObject jsonObject = new JsonObject { Key ="  " +"Key - " + Guid.NewGuid(), Value = data };
+                JsonObject jsonObject = new JsonObject { ProductKey = "  " +"Key - " + Guid.NewGuid(), ProductValue = data };
                 Jsons.Add(jsonObject);
                 count--;
             }

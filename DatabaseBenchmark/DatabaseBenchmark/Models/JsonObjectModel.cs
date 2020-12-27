@@ -29,9 +29,9 @@ namespace DatabaseBenchmark.Web.Models
             foreach(var item in jsonsProduct)
             {
                 var data =  _objectToJsonConverter.JsonConverter(item);
-                productsInJson.Add(new JsonObject { 
-                    Key = Guid.NewGuid().ToString(),
-                    Value = data
+                productsInJson.Add(new JsonObject {
+                    ProductKey = Guid.NewGuid().ToString(),
+                    ProductValue = data
                 });
             }
             //string keyValueProducts = _objectToJsonConverter.JsonConverter(jsonsProduct);
