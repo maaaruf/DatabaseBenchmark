@@ -20,7 +20,7 @@
 }
 
 
-@if (Model.productsInJson != null)
+@if (Model.ProductsObjectInJson != null)
 {
     <table class="table">
         <tr>
@@ -30,23 +30,17 @@
             <th>
                 Value
             </th>
-            <th></th>
         </tr>
 
-        @foreach (var item in Model.productsInJson)
+        @foreach (var item in Model.ProductsObjectInJson)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Key)
+                    @item.Key
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Value)
+                   @item.Value
                 </td>
-                @*<td>
-                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                    </td>*@
             </tr>
         }
 

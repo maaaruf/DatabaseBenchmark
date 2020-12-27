@@ -11,30 +11,26 @@ namespace Benchmark.MVC.Web.Models
         public string Key { get; set; }
         public string Value { get; set; }
         public int JsonDataCount { get; set; }
-        public IList<JsonObject> Jsons { get; set; }
-        public IList<JsonObject> productsInJson { get; set; }
+        public IList<JsonObject> ProductsObjectInJson { get; set; }
 
 
-        public void generateProductsJsonData()
+        public void generateJson()
         {
-            Jsons = _jsonDataGenerator.generateJsonData(JsonDataCount);
-        }
+            IList<JsonProducts> jsonProducts = new List<JsonProducts>();
+            ProductsObjectInJson = new List<JsonObject>();
 
-
-        public void generateProductsJsonsJsonData()
-        {
-            IList<JsonObject> jsonsProduct = _jsonDataGenerator.generateJsonData(JsonDataCount);
-            productsInJson = new List<JsonObject>();
-
-            foreach(var item in jsonsProduct)
+            while (JsonDataCount > 0)
             {
-                var data =  _objectToJsonConverter.JsonConverter(item);
-                productsInJson.Add(new JsonObject { 
-                    Key = Guid.NewGuid().ToString(),
-                    Value = data
-                });
+                IList<Product> products = _randomDataGenerator.generate50Products();
+                jsonProducts.Add(new JsonProducts { Key = Guid.NewGuid().ToString(), Products = products });
+                JsonDataCount--;
             }
-            //string keyValueProducts = _objectToJsonConverter.JsonConverter(jsonsProduct);
+
+            foreach(var item in jsonProducts)
+            {
+                string json = _objectToJsonConverter.JsonConverter(item);
+                ProductsObjectInJson.Add(new JsonObject { Key = item.Key, Value = json });
+            }
         }
     }
 }

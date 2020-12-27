@@ -6121,19 +6121,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Maruf\\.nuget\\packages\\": {}
+    "C:\\Users\\OSL-\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark.Web.csproj",
+      "projectUniqueName": "D:\\Repositories\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark.Web.csproj",
       "projectName": "DatabaseBenchmark.Web",
-      "projectPath": "C:\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark.Web.csproj",
-      "packagesPath": "C:\\Users\\Maruf\\.nuget\\packages\\",
-      "outputPath": "C:\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark\\obj\\",
+      "projectPath": "D:\\Repositories\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark.Web.csproj",
+      "packagesPath": "C:\\Users\\OSL-\\.nuget\\packages\\",
+      "outputPath": "D:\\Repositories\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Maruf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\OSL-\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6147,8 +6147,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark.Domain\\DatabaseBenchmark.Domain.csproj": {
-              "projectPath": "C:\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark.Domain\\DatabaseBenchmark.Domain.csproj"
+            "D:\\Repositories\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark.Domain\\DatabaseBenchmark.Domain.csproj": {
+              "projectPath": "D:\\Repositories\\DatabaseBenchmark\\DatabaseBenchmark\\DatabaseBenchmark.Domain\\DatabaseBenchmark.Domain.csproj"
             }
           }
         }
@@ -6186,7 +6186,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -12,17 +12,13 @@ namespace Benchmark.MVC.Web.Controllers
         public ActionResult Index()
         {
             JsonObjectModel model = new JsonObjectModel();
-
-            //JsonConvert 
-
-            model.generateProductsJsonsJsonData();
             return View(model);
         }
 
         [HttpPost]
         public ActionResult Index(JsonObjectModel model)
         {
-            model.generateProductsJsonsJsonData();
+            model.generateJson();
             return View(model);
         }
 
