@@ -7,7 +7,8 @@ namespace DatabaseBenchmark.Domain.Entity
 {
     public class JsonObject
     {
-        public string Key { get; set; }
-        public string Value { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string ProductKey { get; set; }
+        public virtual string ProductValue { get; set; }
     }
 }

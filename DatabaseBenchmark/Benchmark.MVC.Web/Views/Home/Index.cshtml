@@ -21,6 +21,15 @@
 
 @if (Model.ProductsObjectInJson != null)
 {
+<p>
+    Spended Time: 
+    @Model.SpendedTime.Hours Hours
+    @Model.SpendedTime.Minutes Minutes
+    @Model.SpendedTime.Seconds Seconds
+    @Model.SpendedTime.Milliseconds Miliseconds
+</p>
+
+
     <table class="table">
         <tr>
             <th>
@@ -35,10 +44,10 @@
         {
             <tr>
                 <td>
-                    @item.Key
+                    @item.ProductKey
                 </td>
                 <td>
-                   @item.Value
+                   @item.ProductValue
                 </td>
             </tr>
         }

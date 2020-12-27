@@ -21,7 +21,7 @@ namespace DatabaseBenchmark.Domain.Service
                     new Product
                     {
                         Id = DateTime.Now.Ticks,
-                        Tittle = "Object" + i + Guid.NewGuid(),
+                        Tittle = "Object" + i,
                         Brand = "Brand" + i,
                         Price = i
                     }) ;

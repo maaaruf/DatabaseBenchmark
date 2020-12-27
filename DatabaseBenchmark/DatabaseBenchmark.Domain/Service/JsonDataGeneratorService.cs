@@ -30,8 +30,8 @@ namespace DatabaseBenchmark.Domain.Service
                 if (productsInJson != null)
                 {
                     JsonObject jsonObject = new JsonObject { 
-                        Key = $"{products.FirstOrDefault().Id} {products.Last().Id}", 
-                        Value = productsInJson 
+                        ProductKey = $"{products.FirstOrDefault().Id} {products.Last().Id}",
+                        ProductValue = productsInJson 
                     };
 
                     ProductsInJsons.Add(jsonObject);
