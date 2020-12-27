@@ -18,7 +18,11 @@ namespace Benchmark.MVC.Web.Controllers
         [HttpPost]
         public ActionResult Index(JsonObjectModel model)
         {
-            model.generateJson();
+            if (ModelState.IsValid)
+            {
+                model.generateJson();
+            }
+
             return View(model);
         }
 
