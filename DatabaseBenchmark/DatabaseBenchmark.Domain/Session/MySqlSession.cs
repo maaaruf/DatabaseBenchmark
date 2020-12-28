@@ -29,12 +29,10 @@ namespace Blog.Framework.Sessions
                 return _session;
             }
 
-            var connectionString = "server=localhost;user id=root;password=123456;database=dbbenchmark";
-              
+            string connection = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
 
             FluentConfiguration _config = Fluently.Configure()
-                //.Database(MySQLConfiguration.Standard.ConnectionString(c => c.FromConnectionStringWithKey("DefaultConnection")))
-               .Database(MySQLConfiguration.Standard.ConnectionString(connectionString))
+               .Database(MySQLConfiguration.Standard.ConnectionString(connection))
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JsonObjectMap>());
             
 
