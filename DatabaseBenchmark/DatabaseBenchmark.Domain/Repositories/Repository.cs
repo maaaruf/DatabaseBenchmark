@@ -1,4 +1,4 @@
-﻿using Blog.Framework.Sessions;
+﻿using DatabaseBenchmark.Domain.Session;
 using NHibernate;
 using System;
 using System.Collections.Generic;
@@ -8,20 +8,23 @@ using System.Text;
 
 namespace DatabaseBenchmark.Domain.Repositories
 {
-    public class Repository<TEntity>
+    public class Repository<TEntity, TSession>
         where TEntity : class
+        where TSession : IMySqlSession
     {
 
         public ISession _session { get; set; }
-        public Repository()
+        public TSession _mySqlSession { get; set; }
+        public Repository(TSession MySqlSession)
         {
+            _mySqlSession = MySqlSession;
            // MySqlSession mySqlSession = new MySqlSession();
-            //_session = mySqlSession.Session;
+           //_session = mySqlSession.Session;
         }
 
         public virtual void Add(TEntity entity)
         {
-            using (ISession session = MySqlSession.SessionOpen())
+            using (ISession session = _mySqlSession.SessionOpen())
             {
                 session.Save(entity);
             }    
@@ -35,7 +38,7 @@ namespace DatabaseBenchmark.Domain.Repositories
         public virtual TEntity GetSingle(Expression<Func<TEntity, bool>> filter)
         {
 
-            using (ISession session = MySqlSession.SessionOpen())
+            using (ISession session = _mySqlSession.SessionOpen())
             {
                 return session.QueryOver<TEntity>().Where(filter).SingleOrDefault();
             }
