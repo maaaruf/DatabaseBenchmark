@@ -13,12 +13,14 @@ namespace Benchmark.MVC.Web.Models
     {
         public RandomDataGeneratorService _randomDataGenerator { get; set; }
         public ObjectToJsonConverterService _objectToJsonConverter { get; set; }
-        public Repository<JsonObject, DBBenchmarkMySqlSession> _jsonObjectRepository { get; set; }
+        public JsonObjectRepository _jsonObjectRepository { get; set; }
+        public ProductKeyRepository _productKeyRepository { get; set; }
         public BaseModel()
         {
             _randomDataGenerator = new RandomDataGeneratorService();
             _objectToJsonConverter = new ObjectToJsonConverterService();
-            _jsonObjectRepository = new Repository<JsonObject, DBBenchmarkMySqlSession>(new DBBenchmarkMySqlSession());
+            _jsonObjectRepository = new JsonObjectRepository(new DBBenchmarkMySqlSession());
+            _productKeyRepository = new ProductKeyRepository(new LoadTestMySqlSession());
         }
     }
 
