@@ -9,7 +9,7 @@ using System.Text;
 
 namespace DatabaseBenchmark.Domain.Session
 {
-    class LoadTestMySqlSession
+    public class LoadTestMySqlSession : IMySqlSession
     {
         private ISessionFactory _session;
 
@@ -22,12 +22,11 @@ namespace DatabaseBenchmark.Domain.Session
                 return _session;
             }
 
-            string connection = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
+            string connection = ConfigurationManager.ConnectionStrings["LoadTestMySqlConnection"].ToString();
 
             FluentConfiguration _config = Fluently.Configure()
                .Database(MySQLConfiguration.Standard.ConnectionString(connection))
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JsonObjectMap>());
-
 
             _session = _config.BuildSessionFactory();
             return _session;

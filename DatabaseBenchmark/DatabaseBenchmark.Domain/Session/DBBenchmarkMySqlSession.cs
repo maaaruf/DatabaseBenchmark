@@ -29,7 +29,7 @@ namespace DatabaseBenchmark.Domain.Session
                 return _session;
             }
 
-            string connection = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
+            string connection = ConfigurationManager.ConnectionStrings["DBBenchmarkMySqlConnection"].ToString();
 
             FluentConfiguration _config = Fluently.Configure()
                .Database(MySQLConfiguration.Standard.ConnectionString(connection))

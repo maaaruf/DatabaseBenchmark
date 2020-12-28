@@ -11,7 +11,7 @@ namespace DatabaseBenchmark.Domain.Service
     {
         public IList<Product> Products { get; set; }
 
-        public IList<Product> generateProducts(int productCount)
+        public IList<Product> GenerateProducts(int productCount)
         {
             IList<Product> Products = new List<Product>();
 
@@ -30,9 +30,9 @@ namespace DatabaseBenchmark.Domain.Service
             return Products;
         }
 
-        public IList<Product> generate50Products()
+        public IList<Product> Generate50Products()
         {
-            return generateProducts(50);
+            return GenerateProducts(50);
         }
 
     }

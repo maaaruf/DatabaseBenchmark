@@ -8,7 +8,7 @@ namespace DatabaseBenchmark.Domain.Service
 {
     public class ObjectToJsonConverterService
     {
-        public string JsonConverter(object rawObject)
+        public string Convert(object rawObject)
         {
             string json = JsonSerializer.Serialize(rawObject);
 

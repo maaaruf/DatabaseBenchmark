@@ -6,7 +6,7 @@ namespace DatabaseBenchmark.Domain.Entity
 {
     public class ProductKey
     {
-        public int Id { get; set; }
-        public string ProductsKey { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string ProductsKey { get; set; }
     }
 }
