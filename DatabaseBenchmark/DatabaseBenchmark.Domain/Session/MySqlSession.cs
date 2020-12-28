@@ -12,22 +12,29 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using DatabaseBenchmark.Domain.Mappings;
+using System.Configuration;
 
 namespace Blog.Framework.Sessions
 {
     public class MySqlSession 
     {
         private static ISessionFactory _session;
+       
 
         private static ISessionFactory CreateSession()
         {
+            
             if (_session != null)
             {
                 return _session;
             }
 
+            var connectionString = "server=localhost;user id=root;password=123456;database=dbbenchmark";
+              
+
             FluentConfiguration _config = Fluently.Configure()
-                .Database(MySQLConfiguration.Standard.ConnectionString("server=localhost;user id=root;password=123456;database=dbbenchmark"))
+                //.Database(MySQLConfiguration.Standard.ConnectionString(c => c.FromConnectionStringWithKey("DefaultConnection")))
+               .Database(MySQLConfiguration.Standard.ConnectionString(connectionString))
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JsonObjectMap>());
             
 
