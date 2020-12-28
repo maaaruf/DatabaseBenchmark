@@ -49,8 +49,6 @@ namespace Benchmark.MVC.Web.Models
             }
 
             DateTime endTime = DateTime.Now;
-
-           // TimeSpan duration = DateTime.Parse(time.endTime).Subtract(DateTime.Parse(time.startTime));
             SpendedTime = endTime.Subtract(startTime);
 
 
