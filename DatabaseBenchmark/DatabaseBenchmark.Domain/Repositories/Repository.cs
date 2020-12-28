@@ -24,14 +24,21 @@ namespace DatabaseBenchmark.Domain.Repositories
             using (ISession session = MySqlSession.SessionOpen())
             {
                 session.Save(entity);
-            }
-
-                
+            }    
         }
 
         public virtual void Edit(TEntity entityToUpdate)
         {
             _session.Update(entityToUpdate);
+        }
+
+        public virtual TEntity GetSingle(Expression<Func<TEntity, bool>> filter)
+        {
+
+            using (ISession session = MySqlSession.SessionOpen())
+            {
+                return session.QueryOver<TEntity>().Where(filter).SingleOrDefault();
+            }
         }
 
         public virtual IList<TEntity> Get(Expression<Func<TEntity, bool>> filter)
