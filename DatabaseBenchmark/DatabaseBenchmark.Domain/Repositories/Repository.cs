@@ -13,13 +13,10 @@ namespace DatabaseBenchmark.Domain.Repositories
         where TSession : IMySqlSession
     {
 
-        public ISession _session { get; set; }
         public TSession _mySqlSession { get; set; }
         public Repository(TSession MySqlSession)
         {
             _mySqlSession = MySqlSession;
-           // MySqlSession mySqlSession = new MySqlSession();
-           //_session = mySqlSession.Session;
         }
 
         public virtual void Add(TEntity entity)
@@ -32,7 +29,10 @@ namespace DatabaseBenchmark.Domain.Repositories
 
         public virtual void Edit(TEntity entityToUpdate)
         {
-            _session.Update(entityToUpdate);
+            using (ISession session = _mySqlSession.SessionOpen())
+            {
+                session.Update(entityToUpdate);
+            }
         }
 
         public virtual TEntity GetSingle(Expression<Func<TEntity, bool>> filter)
@@ -46,22 +46,34 @@ namespace DatabaseBenchmark.Domain.Repositories
 
         public virtual IList<TEntity> Get(Expression<Func<TEntity, bool>> filter)
         {
-            return _session.QueryOver<TEntity>().Where(filter).List();
+            using (ISession session = _mySqlSession.SessionOpen())
+            {
+                return session.QueryOver<TEntity>().Where(filter).List();
+            }
         }
 
         public virtual IList<TEntity> GetAll()
         {
-            return _session.Query<TEntity>().ToList();
+            using (ISession session = _mySqlSession.SessionOpen())
+            {
+                return session.Query<TEntity>().ToList();
+            }
         }
 
         public virtual TEntity GetById(int id)
         {
-            return _session.Get<TEntity>(id);
+            using (ISession session = _mySqlSession.SessionOpen())
+            {
+                return session.Get<TEntity>(id);
+            }
         }
 
         public virtual void Remove(int id)
         {
-            _session.Delete(_session.Load<TEntity>(id));
+            using (ISession session = _mySqlSession.SessionOpen())
+            {
+                session.Delete(session.Load<TEntity>(id));
+            }
         }
 
     }
