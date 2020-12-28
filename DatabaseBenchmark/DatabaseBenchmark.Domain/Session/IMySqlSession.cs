@@ -1,10 +1,13 @@
-﻿using System;
+﻿using NHibernate;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DatabaseBenchmark.Domain.Session
 {
-    interface IMySqlSession
+    public interface IMySqlSession
     {
+        ISessionFactory CreateSession();
+        ISession SessionOpen();
     }
 }
