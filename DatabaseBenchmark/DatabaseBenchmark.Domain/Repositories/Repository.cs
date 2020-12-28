@@ -1,4 +1,4 @@
-﻿using Blog.Framework.Sessions;
+﻿using DatabaseBenchmark.Domain.Session;
 using NHibernate;
 using System;
 using System.Collections.Generic;
@@ -8,20 +8,20 @@ using System.Text;
 
 namespace DatabaseBenchmark.Domain.Repositories
 {
-    public class Repository<TEntity>
+    public class Repository<TEntity, TSession>
         where TEntity : class
+        where TSession : IMySqlSession
     {
 
-        public ISession _session { get; set; }
-        public Repository()
+        public TSession _mySqlSession { get; set; }
+        public Repository(TSession MySqlSession)
         {
-           // MySqlSession mySqlSession = new MySqlSession();
-            //_session = mySqlSession.Session;
+            _mySqlSession = MySqlSession;
         }
 
         public virtual void Add(TEntity entity)
         {
-            using (ISession session = MySqlSession.SessionOpen())
+            using (ISession session = _mySqlSession.SessionOpen())
             {
                 session.Save(entity);
             }    
@@ -29,13 +29,16 @@ namespace DatabaseBenchmark.Domain.Repositories
 
         public virtual void Edit(TEntity entityToUpdate)
         {
-            _session.Update(entityToUpdate);
+            using (ISession session = _mySqlSession.SessionOpen())
+            {
+                session.Update(entityToUpdate);
+            }
         }
 
         public virtual TEntity GetSingle(Expression<Func<TEntity, bool>> filter)
         {
 
-            using (ISession session = MySqlSession.SessionOpen())
+            using (ISession session = _mySqlSession.SessionOpen())
             {
                 return session.QueryOver<TEntity>().Where(filter).SingleOrDefault();
             }
@@ -43,22 +46,34 @@ namespace DatabaseBenchmark.Domain.Repositories
 
         public virtual IList<TEntity> Get(Expression<Func<TEntity, bool>> filter)
         {
-            return _session.QueryOver<TEntity>().Where(filter).List();
+            using (ISession session = _mySqlSession.SessionOpen())
+            {
+                return session.QueryOver<TEntity>().Where(filter).List();
+            }
         }
 
         public virtual IList<TEntity> GetAll()
         {
-            return _session.Query<TEntity>().ToList();
+            using (ISession session = _mySqlSession.SessionOpen())
+            {
+                return session.Query<TEntity>().ToList();
+            }
         }
 
         public virtual TEntity GetById(int id)
         {
-            return _session.Get<TEntity>(id);
+            using (ISession session = _mySqlSession.SessionOpen())
+            {
+                return session.Get<TEntity>(id);
+            }
         }
 
         public virtual void Remove(int id)
         {
-            _session.Delete(_session.Load<TEntity>(id));
+            using (ISession session = _mySqlSession.SessionOpen())
+            {
+                session.Delete(session.Load<TEntity>(id));
+            }
         }
 
     }

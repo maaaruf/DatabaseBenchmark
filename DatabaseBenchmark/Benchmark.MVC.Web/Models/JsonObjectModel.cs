@@ -22,39 +22,36 @@ namespace Benchmark.MVC.Web.Models
         public IList<JsonObject> ProductsObjectInJson { get; set; }
 
 
-        public void generateJson()
+        public void GenerateJson()
         {
             IList<JsonProducts> jsonProducts = new List<JsonProducts>();
             ProductsObjectInJson = new List<JsonObject>();
 
             while (JsonDataCount > 0)
             {
-                IList<Product> products = _randomDataGenerator.generate50Products();
+                IList<Product> products = _randomDataGenerator.Generate50Products();
                 jsonProducts.Add(new JsonProducts { Key = Guid.NewGuid().ToString(), Products = products });
                 JsonDataCount--;
             }
 
             foreach(var item in jsonProducts)
             {
-                string json = _objectToJsonConverter.JsonConverter(item);
+                string json = _objectToJsonConverter.Convert(item);
                 JsonObject productData =  new JsonObject { ProductKey = item.Key, ProductValue = json };
                 ProductsObjectInJson.Add(productData);
+
+                _productKeyRepository.Add(new ProductKey { ProductsKey = productData.ProductKey });
             }
 
             DateTime startTime = DateTime.Now;
-
             foreach (var item in ProductsObjectInJson)
             {
                 _jsonObjectRepository.Add(new JsonObject { ProductKey = item.ProductKey, ProductValue = item.ProductValue });
             }
-
             DateTime endTime = DateTime.Now;
-
-           // TimeSpan duration = DateTime.Parse(time.endTime).Subtract(DateTime.Parse(time.startTime));
             SpendedTime = endTime.Subtract(startTime);
-
-
         }
+
 
     }
 }
