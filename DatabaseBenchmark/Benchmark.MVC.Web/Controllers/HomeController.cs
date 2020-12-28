@@ -20,7 +20,7 @@ namespace Benchmark.MVC.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                model.generateJson();
+                model.GenerateJson();
             }
 
             return View(model);
