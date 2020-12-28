@@ -11,11 +11,13 @@ using System.Text;
 using System.Net;
 using System.Net.Http;
 using DatabaseBenchmark.Domain.Entity;
+using log4net;
 
 namespace Benchmark.MVC.Web.Controllers
 {
     public class DataPullController : Controller
     {
+        private static readonly ILog Log = LogManager.GetLogger(typeof(DataPullController));
         // GET: DataPull
         public ActionResult Index()
         {
@@ -26,6 +28,7 @@ namespace Benchmark.MVC.Web.Controllers
         public ActionResult Index(DataPullModel model)
         {
             string data = model.PullData(model.Key);
+            Log.Error("Test");
 
             if (data == null)
                 return Json("null");
