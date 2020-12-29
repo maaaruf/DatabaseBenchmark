@@ -75,7 +75,7 @@ namespace DatabaseBenchmark.Domain.Repositories
 
             using (ISession session = _mySqlSession.SessionOpen())
             {
-                return session.QueryOver<TEntity>().Where(filter).SingleOrDefault();
+                return session.Query<TEntity>().Where(filter).SingleOrDefault();
             }
         }
 
