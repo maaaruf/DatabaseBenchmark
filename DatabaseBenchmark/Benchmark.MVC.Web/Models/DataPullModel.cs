@@ -28,7 +28,7 @@ namespace Benchmark.MVC.Web.Models
             if (data == null)
                 return "null";
             else
-                return "";//data.ProductValue;
+                return data.ProductValue;
         }
     }
 }

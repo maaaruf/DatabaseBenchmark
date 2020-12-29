@@ -30,7 +30,7 @@ namespace Benchmark.MVC.Web.Controllers
             string data = model.PullData(model.Key);
             Log.Error($"Time taken : {model.TotalSpendedTime}");
 
-            if (data == null)
+            if (data == null || data == "")
                 return Json("null");
 
             var json = JsonSerializer.Deserialize<JsonProducts>(data);

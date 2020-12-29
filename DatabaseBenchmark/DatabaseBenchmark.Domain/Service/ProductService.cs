@@ -61,5 +61,11 @@ namespace DatabaseBenchmark.Domain.Service
             JsonObject data = _jsonObjectRepository.GetSingle(x => x.ProductKey == key);
             return data;
         }
+
+        public void InsertKey(string key)
+        {
+            ProductKey productKey = new ProductKey { ProductsKey = key };
+            _productKeyRepository.Add(productKey);
+        }
     }
 }
