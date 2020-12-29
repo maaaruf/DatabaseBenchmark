@@ -7,10 +7,10 @@ namespace DatabaseBenchmark.Domain.Entity
 {
     public class Product
     {
-        public long Id { get; set; }
-        public string Tittle { get; set; }
-        public string Brand { get; set; }
-        public double Price { get; set; }
+        public virtual long Id { get; set; }
+        public virtual string Tittle { get; set; }
+        public virtual string Brand { get; set; }
+        public virtual double Price { get; set; }
 
 
     }

@@ -23,8 +23,6 @@ namespace Benchmark.MVC.Web.Models
         public DateTime EndTime { get; set; }
         public IList<JsonObject> ProductsObjectInJson { get; set; }
 
-
-
         public void GenerateAndInsertData()
         {
             var productsInJson = _productService.GenerateJsonProducts(JsonDataCount);

@@ -6,7 +6,7 @@ namespace DatabaseBenchmark.Domain.Entity
 {
     public class JsonProductsObject
     {
-        public string Key { get; set; }
-        IList<JsonProducts> Products { get; set; }
+        public virtual string Key { get; set; }
+        public virtual IList<JsonProducts>  Products { get; set; }
     }
 }

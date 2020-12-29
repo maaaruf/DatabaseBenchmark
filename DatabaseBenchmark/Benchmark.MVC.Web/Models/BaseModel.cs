@@ -11,22 +11,18 @@ namespace Benchmark.MVC.Web.Models
 {
     public class BaseModel
     {
-        //public RandomDataGeneratorService _randomDataGenerator { get; set; }
-        //public ObjectToJsonConverterService _objectToJsonConverter { get; set; }
-        //public JsonObjectRepository _jsonObjectRepository { get; set; }
-        //public ProductKeyRepository _productKeyRepository { get; set; }
-        //public BaseModel()
-        //{
-        //    _randomDataGenerator = new RandomDataGeneratorService();
-        //    _objectToJsonConverter = new ObjectToJsonConverterService();
-        //    _jsonObjectRepository = new JsonObjectRepository(new DBBenchmarkMySqlSession());
-        //    _productKeyRepository = new ProductKeyRepository(new LoadTestMySqlSession());
-        //}
-
+        public RandomDataGeneratorService _randomDataGenerator { get; set; }
+        public ObjectToJsonConverterService _objectToJsonConverter { get; set; }
+        public JsonObjectRepository _jsonObjectRepository { get; set; }
+        public ProductKeyRepository _productKeyRepository { get; set; }
         public ProductService _productService { get; set; }
         public BaseModel()
         {
             _productService = new ProductService();
+            _randomDataGenerator = new RandomDataGeneratorService();
+            _objectToJsonConverter = new ObjectToJsonConverterService();
+            _jsonObjectRepository = new JsonObjectRepository(new DBBenchmarkMySqlSession());
+            _productKeyRepository = new ProductKeyRepository(new LoadTestMySqlSession());
         }
     }
 
