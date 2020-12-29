@@ -44,10 +44,9 @@ namespace Benchmark.MVC.Web.Models
             }
 
             DateTime startTime = DateTime.Now;
-            foreach (var item in ProductsObjectInJson)
-            {
-                _jsonObjectRepository.Add(new JsonObject { ProductKey = item.ProductKey, ProductValue = item.ProductValue });
-            }
+
+            _jsonObjectRepository.Add(ProductsObjectInJson);
+            
             DateTime endTime = DateTime.Now;
             SpendedTime = endTime.Subtract(startTime);
         }

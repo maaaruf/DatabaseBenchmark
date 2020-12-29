@@ -27,6 +27,41 @@ namespace DatabaseBenchmark.Domain.Repositories
             }    
         }
 
+
+        public virtual void Add(IList<TEntity> entities)
+        {
+            using (ISession session = _mySqlSession.SessionOpen())
+            {
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    foreach (var entity in entities)
+                    {
+                        try
+                        {
+                            session.Save(entity);
+                        }
+                        catch
+                        {
+                            throw new Exception("Faild to save data");
+                        }
+                    }
+
+                    try
+                    {
+                        if(transaction.IsActive && transaction != null)
+                        {
+                            transaction.Commit();
+                        }
+                    }
+                    catch
+                    {
+                        transaction.Rollback();
+                        throw new Exception("Transection was faild");
+                    }
+                }
+            }
+        }
+
         public virtual void Edit(TEntity entityToUpdate)
         {
             using (ISession session = _mySqlSession.SessionOpen())
