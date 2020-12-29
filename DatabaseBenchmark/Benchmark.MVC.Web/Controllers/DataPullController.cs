@@ -28,7 +28,7 @@ namespace Benchmark.MVC.Web.Controllers
         public ActionResult Index(DataPullModel model)
         {
             string data = model.PullData(model.Key);
-            Log.Error("Test");
+            Log.Error($"Time taken : {model.TotalSpendedTime}");
 
             if (data == null)
                 return Json("null");

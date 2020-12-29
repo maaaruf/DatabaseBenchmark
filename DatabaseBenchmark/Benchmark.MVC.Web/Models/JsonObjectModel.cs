@@ -18,37 +18,54 @@ namespace Benchmark.MVC.Web.Models
         public string Value { get; set; }
         [DisplayName("Data Count")]
         public int JsonDataCount { get; set; }
-        public TimeSpan SpendedTime { get; set; }
+        public TimeSpan TotalSpendedTime { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
         public IList<JsonObject> ProductsObjectInJson { get; set; }
 
 
-        public void GenerateJson()
-        {
-            IList<JsonProducts> jsonProducts = new List<JsonProducts>();
-            ProductsObjectInJson = new List<JsonObject>();
 
-            while (JsonDataCount > 0)
+        public void GenerateAndInsertData()
+        {
+            var productsInJson = GenerateJsonProducts(JsonDataCount);
+
+            StartTime = DateTime.Now;
+            TotalSpendedTime = InsertProducts(productsInJson);
+            EndTime = DateTime.Now;
+        }
+
+        public IList<JsonObject> GenerateJsonProducts(int dataCount)
+        {
+            IList<JsonObject> ProductsInJson = new List<JsonObject>();
+            IList<JsonProducts> Products = new List<JsonProducts>();
+
+            while (dataCount > 0)
             {
-                IList<Product> products = _randomDataGenerator.Generate50Products();
-                jsonProducts.Add(new JsonProducts { Key = Guid.NewGuid().ToString(), Products = products });
-                JsonDataCount--;
+                IList<Product> products = _randomDataGenerator.GenerateProducts(100);
+                Products.Add(new JsonProducts { Key = Guid.NewGuid().ToString(), Products = products });
+                dataCount--;
             }
 
-            foreach(var item in jsonProducts)
+            foreach (var item in Products)
             {
                 string json = _objectToJsonConverter.Convert(item);
-                JsonObject productData =  new JsonObject { ProductKey = item.Key, ProductValue = json };
-                ProductsObjectInJson.Add(productData);
-
-                _productKeyRepository.Add(new ProductKey { ProductsKey = productData.ProductKey });
+                JsonObject productData = new JsonObject { ProductKey = item.Key, ProductValue = json };
+                ProductsInJson.Add(productData);
             }
 
+            return ProductsInJson;
+        }
+
+        TimeSpan InsertProducts(IList<JsonObject> ProductsInJson)
+        {
             DateTime startTime = DateTime.Now;
 
-            _jsonObjectRepository.Add(ProductsObjectInJson);
-            
+            _jsonObjectRepository.Add(ProductsInJson);
+
             DateTime endTime = DateTime.Now;
-            SpendedTime = endTime.Subtract(startTime);
+            TimeSpan SpendedTime = endTime.Subtract(startTime);
+
+            return SpendedTime;
         }
 
 

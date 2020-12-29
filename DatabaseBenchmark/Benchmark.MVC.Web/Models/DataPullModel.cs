@@ -12,10 +12,20 @@ namespace Benchmark.MVC.Web.Models
     {
         public string Key { get; set; }
         public string Value { get; set; }
+        public TimeSpan TotalSpendedTime { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
         public IList<JsonObject> ProductsObjectInJson { get; set; }
+
+
         public string PullData(string key)
         {
+            StartTime = DateTime.Now;
+
             JsonObject data = _jsonObjectRepository.GetSingle(x=>x.ProductKey==key);
+
+            EndTime = DateTime.Now;
+            TotalSpendedTime = EndTime.Subtract(StartTime);
 
             if (data == null)
                 return "null";

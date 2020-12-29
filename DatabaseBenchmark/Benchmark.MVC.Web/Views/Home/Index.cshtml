@@ -8,7 +8,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.JsonDataCount, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.JsonDataCount, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.JsonDataCount, new { @class = "form-control", min = "0", oninput = "validity.valid||(value='');", dir = "rtl" })
         </div>
     </div>
     <div class="form-group">
@@ -18,39 +18,41 @@
     </div>
 }
 
-
-@if (Model.ProductsObjectInJson != null)
+@if (Model.JsonDataCount > 0)
 {
-<p>
-    Spended Time: 
-    @Model.SpendedTime.Hours Hours
-    @Model.SpendedTime.Minutes Minutes
-    @Model.SpendedTime.Seconds Seconds
-    @Model.SpendedTime.Milliseconds Miliseconds
-</p>
+    <p>
+        Start Time = @Model.StartTime <br />
+        End Time = @Model.EndTime <br />
+
+        Spended Time:
+        @Model.TotalSpendedTime.Hours Hours
+        @Model.TotalSpendedTime.Minutes Minutes
+        @Model.TotalSpendedTime.Seconds Seconds
+        @Model.TotalSpendedTime.Milliseconds Miliseconds
+    </p>
 
 
-    <table class="table">
-        <tr>
-            <th>
-                Key
-            </th>
-            <th>
-                Value
-            </th>
-        </tr>
-
-        @foreach (var item in Model.ProductsObjectInJson)
-        {
+    @*<table class="table">
             <tr>
-                <td>
-                    @item.ProductKey
-                </td>
-                <td>
-                   @item.ProductValue
-                </td>
+                <th>
+                    Key
+                </th>
+                <th>
+                    Value
+                </th>
             </tr>
-        }
 
-    </table>
+            @foreach (var item in Model.ProductsObjectInJson)
+            {
+                <tr>
+                    <td>
+                        @item.ProductKey
+                    </td>
+                    <td>
+                       @item.ProductValue
+                    </td>
+                </tr>
+            }
+
+        </table>*@
 }
