@@ -27,47 +27,11 @@ namespace Benchmark.MVC.Web.Models
 
         public void GenerateAndInsertData()
         {
-            var productsInJson = GenerateJsonProducts(JsonDataCount);
+            var productsInJson = _productService.GenerateJsonProducts(JsonDataCount);
 
             StartTime = DateTime.Now;
-            TotalSpendedTime = InsertProducts(productsInJson);
+            TotalSpendedTime = _productService.InsertProducts(productsInJson);
             EndTime = DateTime.Now;
         }
-
-        public IList<JsonObject> GenerateJsonProducts(int dataCount)
-        {
-            IList<JsonObject> ProductsInJson = new List<JsonObject>();
-            IList<JsonProducts> Products = new List<JsonProducts>();
-
-            while (dataCount > 0)
-            {
-                IList<Product> products = _randomDataGenerator.GenerateProducts(100);
-                Products.Add(new JsonProducts { Key = Guid.NewGuid().ToString(), Products = products });
-                dataCount--;
-            }
-
-            foreach (var item in Products)
-            {
-                string json = _objectToJsonConverter.Convert(item);
-                JsonObject productData = new JsonObject { ProductKey = item.Key, ProductValue = json };
-                ProductsInJson.Add(productData);
-            }
-
-            return ProductsInJson;
-        }
-
-        TimeSpan InsertProducts(IList<JsonObject> ProductsInJson)
-        {
-            DateTime startTime = DateTime.Now;
-
-            _jsonObjectRepository.Add(ProductsInJson);
-
-            DateTime endTime = DateTime.Now;
-            TimeSpan SpendedTime = endTime.Subtract(startTime);
-
-            return SpendedTime;
-        }
-
-
     }
 }

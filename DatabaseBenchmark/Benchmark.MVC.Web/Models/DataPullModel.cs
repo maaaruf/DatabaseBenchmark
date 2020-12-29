@@ -21,9 +21,7 @@ namespace Benchmark.MVC.Web.Models
         public string PullData(string key)
         {
             StartTime = DateTime.Now;
-
-            JsonObject data = _jsonObjectRepository.GetSingle(x=>x.ProductKey==key);
-
+            JsonObject data = _productService.GetSingleKeysProduct(key);
             EndTime = DateTime.Now;
             TotalSpendedTime = EndTime.Subtract(StartTime);
 
