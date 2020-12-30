@@ -2,7 +2,6 @@
 
 @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    @Html.AntiForgeryToken()
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
@@ -18,7 +17,7 @@
     </div>
 }
 
-@if (Model.JsonDataCount > 0)
+@if (Model.ShowDuration)
 {
     <p>
         Start Time = @Model.StartTime <br />

@@ -20,7 +20,7 @@ namespace Benchmark.MVC.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                model.GenerateAndInsertData();
+                model.GenerateAndInsertDataBySplit();
             }
 
             return View(model);
