@@ -10,10 +10,9 @@ namespace DatabaseBenchmark.Domain.Mappings
     {
         public JsonObjectMap()
         {
-            Id(x => x.Id);
-            Map(x => x.ProductKey);
+            Id(x => x.ProductKey);
             Map(x => x.ProductValue);
-            Table("JsonProducts");
+            Table("productskey");
         }
     }
 }
