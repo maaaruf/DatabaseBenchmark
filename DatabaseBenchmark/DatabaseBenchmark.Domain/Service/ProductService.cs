@@ -25,20 +25,15 @@ namespace DatabaseBenchmark.Domain.Service
         public IList<JsonObject> GenerateJsonProducts(int dataCount)
         {
             IList<JsonObject> ProductsInJson = new List<JsonObject>();
-            IList<JsonProducts> Products = new List<JsonProducts>();
 
             while (dataCount > 0)
             {
                 IList<Product> products = _randomDataGenerator.GenerateProducts(100);
-                Products.Add(new JsonProducts { Key = Guid.NewGuid().ToString(), Products = products });
-                dataCount--;
-            }
-
-            foreach (var item in Products)
-            {
-                string json = _objectToJsonConverter.Convert(item);
-                JsonObject productData = new JsonObject { ProductKey = item.Key, ProductValue = json };
+                var product = new JsonProducts { Key = Guid.NewGuid().ToString(), Products = products };
+                string json = _objectToJsonConverter.Convert(product);
+                JsonObject productData = new JsonObject { ProductKey = product.Key, ProductValue = json };
                 ProductsInJson.Add(productData);
+                dataCount--;
             }
 
             return ProductsInJson;
