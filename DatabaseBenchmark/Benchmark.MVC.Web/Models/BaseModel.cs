@@ -15,10 +15,10 @@ namespace Benchmark.MVC.Web.Models
         public ObjectToJsonConverterService _objectToJsonConverter { get; set; }
         public JsonObjectRepository _jsonObjectRepository { get; set; }
         public ProductKeyRepository _productKeyRepository { get; set; }
-        public ProductService _productService { get; set; }
+        public ProductMongoService _productService { get; set; }
         public BaseModel()
         {
-            _productService = new ProductService();
+            _productService = new ProductMongoService();
             _randomDataGenerator = new RandomDataGeneratorService();
             _objectToJsonConverter = new ObjectToJsonConverterService();
             _jsonObjectRepository = new JsonObjectRepository(new DBBenchmarkMySqlSession());

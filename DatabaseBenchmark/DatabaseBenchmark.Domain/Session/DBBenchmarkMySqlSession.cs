@@ -16,7 +16,7 @@ using System.Configuration;
 
 namespace DatabaseBenchmark.Domain.Session
 {
-    public class DBBenchmarkMySqlSession : IMySqlSession
+    public class DBBenchmarkMySqlSession : IDbSession
     {
         private ISessionFactory _session;
        

@@ -27,14 +27,16 @@ namespace Benchmark.MVC.Web.Controllers
         [HttpPost]
         public ActionResult Index(DataPullModel model)
         {
-            string data = model.PullData(model.Key);
-            Log.Error($"Time taken : {model.TotalSpendedTime}");
+            var data = model.PullMongoData(model.Key);
 
-            if (data == null || data == "")
-                return Json("null");
+            //Log.Error($"Time taken : {model.TotalSpendedTime}");
 
-            var json = JsonSerializer.Deserialize<JsonProducts>(data);
-            return Json(json);
+            //if (data == null || data == "")
+            //    return Json("null");
+
+            //var json = JsonSerializer.Deserialize<JsonProducts>(data);
+
+            return Json(data);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace DatabaseBenchmark.Domain.Repositories
 {
     public class Repository<TEntity, TSession>
         where TEntity : class
-        where TSession : IMySqlSession
+        where TSession : IDbSession
     {
 
         public TSession _mySqlSession { get; set; }

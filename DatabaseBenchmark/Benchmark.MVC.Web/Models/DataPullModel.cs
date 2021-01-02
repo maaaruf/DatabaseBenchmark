@@ -30,5 +30,19 @@ namespace Benchmark.MVC.Web.Models
             else
                 return data.ProductValue;
         }
+
+        public JsonProducts PullMongoData(string key)
+        {
+            StartTime = DateTime.Now;
+            var data = _productService.GetSingleKeysProduct(key);
+            EndTime = DateTime.Now;
+            TotalSpendedTime = EndTime.Subtract(StartTime);
+
+            if (data == null)
+                return null;
+            else
+                return data;
+        }
+
     }
 }

@@ -32,10 +32,10 @@ namespace Benchmark.MVC.Web.Models
             while (JsonDataCount > 0)
             {
                 
-                TotalSpendedTime += GenerateAndInsertData(100);
-                JsonDataCount -= 100;
+                TotalSpendedTime += GenerateAndInsertData(1000);
+                JsonDataCount -= 1000;
 
-                if (JsonDataCount < 100 && JsonDataCount > 0)
+                if (JsonDataCount < 1000 && JsonDataCount > 0)
                 {
                     TotalSpendedTime += GenerateAndInsertData(JsonDataCount);
                     break;

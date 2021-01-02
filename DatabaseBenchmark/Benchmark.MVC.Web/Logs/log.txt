@@ -1857,3 +1857,238 @@
 2021-01-02 10:47:23,865 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Named query checking : enabled
 2021-01-02 10:47:23,865 [6] INFO  NHibernate.Impl.SessionFactoryImpl [(null)] - building session factory
 2021-01-02 10:47:23,866 [6] INFO  NHibernate.Impl.SessionFactoryObjectFactory [(null)] - no name configured
+2021-01-02 11:33:14,462 [7] INFO  NHibernate.Cfg.Environment [(null)] - NHibernate 5.3.5+5ec48216cbd9093f19b0b8aa5653aa6f007ed72e (assembly 5.3.0.0)
+2021-01-02 11:33:14,473 [7] INFO  NHibernate.Cfg.Environment [(null)] - hibernate-configuration section not found in application configuration file
+2021-01-02 11:33:14,474 [7] INFO  NHibernate.Cfg.Environment [(null)] - Bytecode provider name : lcg
+2021-01-02 11:33:14,475 [7] INFO  NHibernate.Cfg.Environment [(null)] - Objects factory class : NHibernate.Bytecode.ActivatorObjectsFactory
+2021-01-02 11:33:14,475 [7] INFO  NHibernate.Cfg.Environment [(null)] - Using reflection optimizer
+2021-01-02 11:33:14,820 [7] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.JsonObject -> productskey
+2021-01-02 11:33:14,848 [7] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.ProductKey -> ProductKeys
+2021-01-02 11:33:14,854 [7] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 11:33:14,862 [7] INFO  NHibernate.Cfg.Configuration [(null)] - checking mappings queue
+2021-01-02 11:33:14,862 [7] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-many association mappings
+2021-01-02 11:33:14,863 [7] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-one association property references
+2021-01-02 11:33:14,863 [7] INFO  NHibernate.Cfg.Configuration [(null)] - processing foreign key constraints
+2021-01-02 11:33:14,864 [7] INFO  NHibernate.Cfg.Configuration [(null)] - processing filters (second pass)
+2021-01-02 11:33:14,871 [7] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 11:33:14,874 [7] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 11:33:14,910 [7] INFO  NHibernate.Exceptions.SQLExceptionConverterFactory [(null)] - Using dialect defined converter
+2021-01-02 11:33:14,910 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Generate SQL with comments: disabled
+2021-01-02 11:33:14,911 [7] INFO  NHibernate.Connection.ConnectionProviderFactory [(null)] - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
+2021-01-02 11:33:14,911 [7] INFO  NHibernate.Connection.ConnectionProvider [(null)] - Configuring ConnectionProvider
+2021-01-02 11:33:14,951 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Transaction factory: NHibernate.Transaction.AdoNetWithSystemTransactionFactory
+2021-01-02 11:33:14,952 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Optimize cache for minimal puts: False
+2021-01-02 11:33:14,952 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Connection release mode: auto
+2021-01-02 11:33:14,952 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default batch fetch size: 1
+2021-01-02 11:33:14,952 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Statistics: disabled
+2021-01-02 11:33:14,952 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Deleted entity synthetic identifier rollback: disabled
+2021-01-02 11:33:14,953 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2021-01-02 11:33:14,953 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query provider: NHibernate.Linq.DefaultQueryProvider
+2021-01-02 11:33:14,954 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query language substitutions: {}
+2021-01-02 11:33:14,954 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 11:33:14,955 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL inserts for batching: disabled
+2021-01-02 11:33:14,955 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL updates for batching: disabled
+2021-01-02 11:33:14,955 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 11:33:14,956 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default flush mode: Auto
+2021-01-02 11:33:14,956 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Named query checking : enabled
+2021-01-02 11:33:14,963 [7] INFO  NHibernate.Impl.SessionFactoryImpl [(null)] - building session factory
+2021-01-02 11:33:15,097 [7] INFO  NHibernate.Impl.SessionFactoryObjectFactory [(null)] - no name configured
+2021-01-02 11:33:18,498 [6] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.JsonObject -> productskey
+2021-01-02 11:33:18,498 [6] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.ProductKey -> ProductKeys
+2021-01-02 11:33:18,499 [6] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 11:33:18,499 [6] INFO  NHibernate.Cfg.Configuration [(null)] - checking mappings queue
+2021-01-02 11:33:18,499 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-many association mappings
+2021-01-02 11:33:18,499 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-one association property references
+2021-01-02 11:33:18,499 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing foreign key constraints
+2021-01-02 11:33:18,499 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing filters (second pass)
+2021-01-02 11:33:18,500 [6] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 11:33:18,500 [6] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 11:33:18,500 [6] INFO  NHibernate.Exceptions.SQLExceptionConverterFactory [(null)] - Using dialect defined converter
+2021-01-02 11:33:18,500 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Generate SQL with comments: disabled
+2021-01-02 11:33:18,500 [6] INFO  NHibernate.Connection.ConnectionProviderFactory [(null)] - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
+2021-01-02 11:33:18,501 [6] INFO  NHibernate.Connection.ConnectionProvider [(null)] - Configuring ConnectionProvider
+2021-01-02 11:33:18,508 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Transaction factory: NHibernate.Transaction.AdoNetWithSystemTransactionFactory
+2021-01-02 11:33:18,509 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Optimize cache for minimal puts: False
+2021-01-02 11:33:18,509 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Connection release mode: auto
+2021-01-02 11:33:18,509 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default batch fetch size: 1
+2021-01-02 11:33:18,509 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Statistics: disabled
+2021-01-02 11:33:18,509 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Deleted entity synthetic identifier rollback: disabled
+2021-01-02 11:33:18,509 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2021-01-02 11:33:18,509 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query provider: NHibernate.Linq.DefaultQueryProvider
+2021-01-02 11:33:18,510 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query language substitutions: {}
+2021-01-02 11:33:18,510 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 11:33:18,510 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL inserts for batching: disabled
+2021-01-02 11:33:18,510 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL updates for batching: disabled
+2021-01-02 11:33:18,510 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 11:33:18,510 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default flush mode: Auto
+2021-01-02 11:33:18,510 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Named query checking : enabled
+2021-01-02 11:33:18,510 [6] INFO  NHibernate.Impl.SessionFactoryImpl [(null)] - building session factory
+2021-01-02 11:33:18,512 [6] INFO  NHibernate.Impl.SessionFactoryObjectFactory [(null)] - no name configured
+2021-01-02 11:33:20,457 [6] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.JsonObject -> productskey
+2021-01-02 11:33:20,457 [6] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.ProductKey -> ProductKeys
+2021-01-02 11:33:20,457 [6] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 11:33:20,458 [6] INFO  NHibernate.Cfg.Configuration [(null)] - checking mappings queue
+2021-01-02 11:33:20,458 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-many association mappings
+2021-01-02 11:33:20,458 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-one association property references
+2021-01-02 11:33:20,458 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing foreign key constraints
+2021-01-02 11:33:20,458 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing filters (second pass)
+2021-01-02 11:33:20,458 [6] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 11:33:20,458 [6] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 11:33:20,459 [6] INFO  NHibernate.Exceptions.SQLExceptionConverterFactory [(null)] - Using dialect defined converter
+2021-01-02 11:33:20,459 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Generate SQL with comments: disabled
+2021-01-02 11:33:20,459 [6] INFO  NHibernate.Connection.ConnectionProviderFactory [(null)] - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
+2021-01-02 11:33:20,459 [6] INFO  NHibernate.Connection.ConnectionProvider [(null)] - Configuring ConnectionProvider
+2021-01-02 11:33:20,469 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Transaction factory: NHibernate.Transaction.AdoNetWithSystemTransactionFactory
+2021-01-02 11:33:20,469 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Optimize cache for minimal puts: False
+2021-01-02 11:33:20,469 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Connection release mode: auto
+2021-01-02 11:33:20,469 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default batch fetch size: 1
+2021-01-02 11:33:20,469 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Statistics: disabled
+2021-01-02 11:33:20,469 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Deleted entity synthetic identifier rollback: disabled
+2021-01-02 11:33:20,469 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2021-01-02 11:33:20,470 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query provider: NHibernate.Linq.DefaultQueryProvider
+2021-01-02 11:33:20,470 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query language substitutions: {}
+2021-01-02 11:33:20,470 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 11:33:20,470 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL inserts for batching: disabled
+2021-01-02 11:33:20,470 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL updates for batching: disabled
+2021-01-02 11:33:20,470 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 11:33:20,470 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default flush mode: Auto
+2021-01-02 11:33:20,471 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Named query checking : enabled
+2021-01-02 11:33:20,471 [6] INFO  NHibernate.Impl.SessionFactoryImpl [(null)] - building session factory
+2021-01-02 11:33:20,472 [6] INFO  NHibernate.Impl.SessionFactoryObjectFactory [(null)] - no name configured
+2021-01-02 11:33:22,634 [6] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.JsonObject -> productskey
+2021-01-02 11:33:22,635 [6] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.ProductKey -> ProductKeys
+2021-01-02 11:33:22,635 [6] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 11:33:22,635 [6] INFO  NHibernate.Cfg.Configuration [(null)] - checking mappings queue
+2021-01-02 11:33:22,635 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-many association mappings
+2021-01-02 11:33:22,635 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-one association property references
+2021-01-02 11:33:22,635 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing foreign key constraints
+2021-01-02 11:33:22,635 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing filters (second pass)
+2021-01-02 11:33:22,636 [6] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 11:33:22,636 [6] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 11:33:22,636 [6] INFO  NHibernate.Exceptions.SQLExceptionConverterFactory [(null)] - Using dialect defined converter
+2021-01-02 11:33:22,636 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Generate SQL with comments: disabled
+2021-01-02 11:33:22,636 [6] INFO  NHibernate.Connection.ConnectionProviderFactory [(null)] - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
+2021-01-02 11:33:22,637 [6] INFO  NHibernate.Connection.ConnectionProvider [(null)] - Configuring ConnectionProvider
+2021-01-02 11:33:22,645 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Transaction factory: NHibernate.Transaction.AdoNetWithSystemTransactionFactory
+2021-01-02 11:33:22,645 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Optimize cache for minimal puts: False
+2021-01-02 11:33:22,645 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Connection release mode: auto
+2021-01-02 11:33:22,645 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default batch fetch size: 1
+2021-01-02 11:33:22,645 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Statistics: disabled
+2021-01-02 11:33:22,646 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Deleted entity synthetic identifier rollback: disabled
+2021-01-02 11:33:22,646 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2021-01-02 11:33:22,646 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query provider: NHibernate.Linq.DefaultQueryProvider
+2021-01-02 11:33:22,646 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query language substitutions: {}
+2021-01-02 11:33:22,646 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 11:33:22,646 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL inserts for batching: disabled
+2021-01-02 11:33:22,646 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL updates for batching: disabled
+2021-01-02 11:33:22,646 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 11:33:22,647 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default flush mode: Auto
+2021-01-02 11:33:22,647 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Named query checking : enabled
+2021-01-02 11:33:22,647 [6] INFO  NHibernate.Impl.SessionFactoryImpl [(null)] - building session factory
+2021-01-02 11:33:22,648 [6] INFO  NHibernate.Impl.SessionFactoryObjectFactory [(null)] - no name configured
+2021-01-02 12:55:52,042 [6] INFO  NHibernate.Cfg.Environment [(null)] - NHibernate 5.3.5+5ec48216cbd9093f19b0b8aa5653aa6f007ed72e (assembly 5.3.0.0)
+2021-01-02 12:55:52,054 [6] INFO  NHibernate.Cfg.Environment [(null)] - hibernate-configuration section not found in application configuration file
+2021-01-02 12:55:52,055 [6] INFO  NHibernate.Cfg.Environment [(null)] - Bytecode provider name : lcg
+2021-01-02 12:55:52,056 [6] INFO  NHibernate.Cfg.Environment [(null)] - Objects factory class : NHibernate.Bytecode.ActivatorObjectsFactory
+2021-01-02 12:55:52,056 [6] INFO  NHibernate.Cfg.Environment [(null)] - Using reflection optimizer
+2021-01-02 12:55:52,395 [6] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.JsonObject -> productskey
+2021-01-02 12:55:52,423 [6] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.ProductKey -> ProductKeys
+2021-01-02 12:55:52,429 [6] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 12:55:52,437 [6] INFO  NHibernate.Cfg.Configuration [(null)] - checking mappings queue
+2021-01-02 12:55:52,437 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-many association mappings
+2021-01-02 12:55:52,437 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-one association property references
+2021-01-02 12:55:52,438 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing foreign key constraints
+2021-01-02 12:55:52,439 [6] INFO  NHibernate.Cfg.Configuration [(null)] - processing filters (second pass)
+2021-01-02 12:55:52,446 [6] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 12:55:52,449 [6] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 12:55:52,494 [6] INFO  NHibernate.Exceptions.SQLExceptionConverterFactory [(null)] - Using dialect defined converter
+2021-01-02 12:55:52,495 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Generate SQL with comments: disabled
+2021-01-02 12:55:52,496 [6] INFO  NHibernate.Connection.ConnectionProviderFactory [(null)] - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
+2021-01-02 12:55:52,496 [6] INFO  NHibernate.Connection.ConnectionProvider [(null)] - Configuring ConnectionProvider
+2021-01-02 12:55:52,539 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Transaction factory: NHibernate.Transaction.AdoNetWithSystemTransactionFactory
+2021-01-02 12:55:52,540 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Optimize cache for minimal puts: False
+2021-01-02 12:55:52,540 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Connection release mode: auto
+2021-01-02 12:55:52,540 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default batch fetch size: 1
+2021-01-02 12:55:52,540 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Statistics: disabled
+2021-01-02 12:55:52,540 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Deleted entity synthetic identifier rollback: disabled
+2021-01-02 12:55:52,541 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2021-01-02 12:55:52,541 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query provider: NHibernate.Linq.DefaultQueryProvider
+2021-01-02 12:55:52,542 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query language substitutions: {}
+2021-01-02 12:55:52,542 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 12:55:52,543 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL inserts for batching: disabled
+2021-01-02 12:55:52,543 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL updates for batching: disabled
+2021-01-02 12:55:52,544 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 12:55:52,544 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default flush mode: Auto
+2021-01-02 12:55:52,544 [6] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Named query checking : enabled
+2021-01-02 12:55:52,552 [6] INFO  NHibernate.Impl.SessionFactoryImpl [(null)] - building session factory
+2021-01-02 12:55:52,681 [6] INFO  NHibernate.Impl.SessionFactoryObjectFactory [(null)] - no name configured
+2021-01-02 12:55:52,959 [6] INFO  NHibernate.Hql.Ast.ANTLR.Tree.FromElement [(null)] - handling property dereference [DatabaseBenchmark.Domain.Entity.JsonObject (x) -> ProductKey (Class)]
+2021-01-02 12:56:02,509 [7] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.JsonObject -> productskey
+2021-01-02 12:56:02,509 [7] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.ProductKey -> ProductKeys
+2021-01-02 12:56:02,509 [7] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 12:56:02,510 [7] INFO  NHibernate.Cfg.Configuration [(null)] - checking mappings queue
+2021-01-02 12:56:02,510 [7] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-many association mappings
+2021-01-02 12:56:02,510 [7] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-one association property references
+2021-01-02 12:56:02,510 [7] INFO  NHibernate.Cfg.Configuration [(null)] - processing foreign key constraints
+2021-01-02 12:56:02,510 [7] INFO  NHibernate.Cfg.Configuration [(null)] - processing filters (second pass)
+2021-01-02 12:56:02,510 [7] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 12:56:02,510 [7] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 12:56:02,511 [7] INFO  NHibernate.Exceptions.SQLExceptionConverterFactory [(null)] - Using dialect defined converter
+2021-01-02 12:56:02,511 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Generate SQL with comments: disabled
+2021-01-02 12:56:02,511 [7] INFO  NHibernate.Connection.ConnectionProviderFactory [(null)] - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
+2021-01-02 12:56:02,511 [7] INFO  NHibernate.Connection.ConnectionProvider [(null)] - Configuring ConnectionProvider
+2021-01-02 12:56:02,521 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Transaction factory: NHibernate.Transaction.AdoNetWithSystemTransactionFactory
+2021-01-02 12:56:02,521 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Optimize cache for minimal puts: False
+2021-01-02 12:56:02,521 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Connection release mode: auto
+2021-01-02 12:56:02,521 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default batch fetch size: 1
+2021-01-02 12:56:02,521 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Statistics: disabled
+2021-01-02 12:56:02,522 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Deleted entity synthetic identifier rollback: disabled
+2021-01-02 12:56:02,522 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2021-01-02 12:56:02,522 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query provider: NHibernate.Linq.DefaultQueryProvider
+2021-01-02 12:56:02,522 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query language substitutions: {}
+2021-01-02 12:56:02,522 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 12:56:02,522 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL inserts for batching: disabled
+2021-01-02 12:56:02,522 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL updates for batching: disabled
+2021-01-02 12:56:02,522 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 12:56:02,523 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default flush mode: Auto
+2021-01-02 12:56:02,523 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Named query checking : enabled
+2021-01-02 12:56:02,523 [7] INFO  NHibernate.Impl.SessionFactoryImpl [(null)] - building session factory
+2021-01-02 12:56:02,524 [7] INFO  NHibernate.Impl.SessionFactoryObjectFactory [(null)] - no name configured
+2021-01-02 12:56:02,525 [7] INFO  NHibernate.Hql.Ast.ANTLR.Tree.FromElement [(null)] - handling property dereference [DatabaseBenchmark.Domain.Entity.JsonObject (x) -> ProductKey (Class)]
+2021-01-02 12:58:51,500 [7] INFO  NHibernate.Cfg.Environment [(null)] - NHibernate 5.3.5+5ec48216cbd9093f19b0b8aa5653aa6f007ed72e (assembly 5.3.0.0)
+2021-01-02 12:58:51,512 [7] INFO  NHibernate.Cfg.Environment [(null)] - hibernate-configuration section not found in application configuration file
+2021-01-02 12:58:51,513 [7] INFO  NHibernate.Cfg.Environment [(null)] - Bytecode provider name : lcg
+2021-01-02 12:58:51,514 [7] INFO  NHibernate.Cfg.Environment [(null)] - Objects factory class : NHibernate.Bytecode.ActivatorObjectsFactory
+2021-01-02 12:58:51,514 [7] INFO  NHibernate.Cfg.Environment [(null)] - Using reflection optimizer
+2021-01-02 12:58:51,851 [7] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.JsonObject -> productskey
+2021-01-02 12:58:51,880 [7] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: DatabaseBenchmark.Domain.Entity.ProductKey -> ProductKeys
+2021-01-02 12:58:51,886 [7] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 12:58:51,894 [7] INFO  NHibernate.Cfg.Configuration [(null)] - checking mappings queue
+2021-01-02 12:58:51,894 [7] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-many association mappings
+2021-01-02 12:58:51,894 [7] INFO  NHibernate.Cfg.Configuration [(null)] - processing one-to-one association property references
+2021-01-02 12:58:51,894 [7] INFO  NHibernate.Cfg.Configuration [(null)] - processing foreign key constraints
+2021-01-02 12:58:51,896 [7] INFO  NHibernate.Cfg.Configuration [(null)] - processing filters (second pass)
+2021-01-02 12:58:51,903 [7] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 12:58:51,906 [7] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MySQLDialect
+2021-01-02 12:58:51,942 [7] INFO  NHibernate.Exceptions.SQLExceptionConverterFactory [(null)] - Using dialect defined converter
+2021-01-02 12:58:51,942 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Generate SQL with comments: disabled
+2021-01-02 12:58:51,943 [7] INFO  NHibernate.Connection.ConnectionProviderFactory [(null)] - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
+2021-01-02 12:58:51,943 [7] INFO  NHibernate.Connection.ConnectionProvider [(null)] - Configuring ConnectionProvider
+2021-01-02 12:58:51,985 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Transaction factory: NHibernate.Transaction.AdoNetWithSystemTransactionFactory
+2021-01-02 12:58:51,986 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Optimize cache for minimal puts: False
+2021-01-02 12:58:51,986 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Connection release mode: auto
+2021-01-02 12:58:51,986 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default batch fetch size: 1
+2021-01-02 12:58:51,986 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Statistics: disabled
+2021-01-02 12:58:51,987 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Deleted entity synthetic identifier rollback: disabled
+2021-01-02 12:58:51,987 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2021-01-02 12:58:51,988 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query provider: NHibernate.Linq.DefaultQueryProvider
+2021-01-02 12:58:51,988 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Query language substitutions: {}
+2021-01-02 12:58:51,989 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 12:58:51,989 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL inserts for batching: disabled
+2021-01-02 12:58:51,989 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Order SQL updates for batching: disabled
+2021-01-02 12:58:51,990 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2021-01-02 12:58:51,990 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Default flush mode: Auto
+2021-01-02 12:58:51,990 [7] INFO  NHibernate.Cfg.SettingsFactory [(null)] - Named query checking : enabled
+2021-01-02 12:58:51,998 [7] INFO  NHibernate.Impl.SessionFactoryImpl [(null)] - building session factory
+2021-01-02 12:58:52,090 [7] INFO  NHibernate.Impl.SessionFactoryObjectFactory [(null)] - no name configured
+2021-01-02 12:58:52,365 [7] INFO  NHibernate.Hql.Ast.ANTLR.Tree.FromElement [(null)] - handling property dereference [DatabaseBenchmark.Domain.Entity.JsonObject (x) -> ProductKey (Class)]

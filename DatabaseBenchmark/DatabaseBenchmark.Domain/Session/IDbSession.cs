@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DatabaseBenchmark.Domain.Session
 {
-    public interface IMySqlSession
+    public interface IDbSession
     {
         ISessionFactory CreateSession();
         ISession SessionOpen();
