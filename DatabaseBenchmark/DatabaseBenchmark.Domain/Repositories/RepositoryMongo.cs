@@ -13,6 +13,7 @@ namespace DatabaseBenchmark.Domain.Repositories
     {
         private IMongoDatabase _session;
         private string table;
+
         public RepositoryMongo(TSession session, string table)
         {
             _session = session.session;
@@ -22,13 +23,13 @@ namespace DatabaseBenchmark.Domain.Repositories
         public virtual void Add(TEntity entity)
         {
             var collection = _session.GetCollection<TEntity>(table);
-            collection.InsertOne(entity);
+            collection.InsertOneAsync(entity);
         }
 
         public virtual void Add(IList<TEntity> entities)
         {
             var collection = _session.GetCollection<TEntity>(table);
-            collection.InsertMany(entities.AsEnumerable());
+            collection.InsertManyAsync(entities.AsEnumerable());
         }
 
         public virtual void Edit(TEntity entityToUpdate)

@@ -20,16 +20,23 @@ namespace DatabaseBenchmark.Domain.Service
         }
 
 
-        public JsonProducts GenerateJsonProducts(int dataCount)
+        public IList<JsonProducts> GenerateJsonProducts(int dataCount)
         {
-            IList<Product> products = _randomDataGenerator.GenerateProducts(100);
-            var product = new JsonProducts { Key = Guid.NewGuid().ToString(), Products = products };
+            IList<JsonProducts> productsList = new List<JsonProducts>();
 
-            return product;
+            IList<Product> products = _randomDataGenerator.GenerateProducts(100);
+
+            while (dataCount > 0)
+            {
+                productsList.Add(new JsonProducts { Key = Guid.NewGuid().ToString(), Products = products });
+                dataCount--;
+            }
+
+            return productsList;
         }
 
 
-        public TimeSpan InsertProducts(JsonProducts products)
+        public TimeSpan InsertProducts(IList<JsonProducts> products)
         {
             DateTime startTime = DateTime.Now;
 
