@@ -1,3 +1,5 @@
 obj
 .vs
 packages
+bin
+Logs
