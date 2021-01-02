@@ -18,7 +18,6 @@ namespace Benchmark.MVC.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             log4net.Config.XmlConfigurator.Configure();
-            GlobalConfiguration.Configure(WebApiConfig.Register);
         }
 
     }
