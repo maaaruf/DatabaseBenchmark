@@ -8,7 +8,7 @@ namespace DatabaseBenchmark.Domain.Repositories
 {
     public class ProductsObjectRepository : Repository<JsonObject, DBBenchmarkMySqlSession>
     {
-        public ProductsObjectRepository(DBBenchmarkMySqlSession MySqlSession) : base(MySqlSession)
+        public ProductsObjectRepository() : base(new DBBenchmarkMySqlSession())
         {
         }
     }

@@ -49,9 +49,7 @@ namespace Benchmark.MVC.Web.Models
         public TimeSpan GenerateAndInsertData(int count)
         {
             var productsInJson = _productService.GenerateJsonProducts(count);
-            
             TimeSpan SpendedTime = _productService.InsertProducts(productsInJson);
-            
 
             return SpendedTime;
         }

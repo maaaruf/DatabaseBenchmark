@@ -6,9 +6,9 @@ using System.Text;
 
 namespace DatabaseBenchmark.Domain.Repositories
 {
-    public class ProductsObjectMongoRepository : RepositoryMongo<ProductsObject, DBBenchmarkMongoSession>
+    public class ProductsObjectMongoRepository : RepositoryMongo<ProductsObject, DBBenchmarkMongoSession>, IProductsObjectRepository
     {
-        public ProductsObjectMongoRepository(DBBenchmarkMongoSession session, string table= "products") : base(new DBBenchmarkMongoSession("dbb"), table)
+        public ProductsObjectMongoRepository() : base(new DBBenchmarkMongoSession("dbb"), "productscopy")
         {
         }
     }

@@ -7,43 +7,41 @@ using System.Text;
 
 namespace DatabaseBenchmark.Domain.Service
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
         public RandomDataGeneratorService _randomDataGenerator { get; set; }
         public ObjectToJsonConverterService _objectToJsonConverter { get; set; }
-        public ProductsObjectRepository _jsonObjectRepository { get; set; }
+        public ProductsObjectMongoRepository _productsObjectRepository { get; set; }
         public ProductKeyRepository _productKeyRepository { get; set; }
         public ProductService()
         {
             _randomDataGenerator = new RandomDataGeneratorService();
             _objectToJsonConverter = new ObjectToJsonConverterService();
-            _jsonObjectRepository = new ProductsObjectRepository(new DBBenchmarkMySqlSession());
+            _productsObjectRepository = new ProductsObjectMongoRepository();
             _productKeyRepository = new ProductKeyRepository(new LoadTestMySqlSession());
         }
 
 
-        public IList<JsonObject> GenerateJsonProducts(int dataCount)
+        public IList<ProductsObject> GenerateJsonProducts(int dataCount)
         {
-            IList<JsonObject> ProductsInJson = new List<JsonObject>();
+            IList<ProductsObject> productsList = new List<ProductsObject>();
+
+            IList<Product> products = _randomDataGenerator.GenerateProducts(100);
 
             while (dataCount > 0)
             {
-                IList<Product> products = _randomDataGenerator.GenerateProducts(100);
-                var product = new ProductsObject { Key = Guid.NewGuid().ToString(), Products = products };
-                string json = _objectToJsonConverter.Convert(product);
-                JsonObject productData = new JsonObject { ProductKey = product.Key, ProductValue = json };
-                ProductsInJson.Add(productData);
+                productsList.Add(new ProductsObject { Key = Guid.NewGuid().ToString(), Products = products });
                 dataCount--;
             }
 
-            return ProductsInJson;
+            return productsList;
         }
 
-        public TimeSpan InsertProducts(IList<JsonObject> ProductsInJson)
+        public TimeSpan InsertProducts(IList<ProductsObject> products)
         {
             DateTime startTime = DateTime.Now;
 
-            _jsonObjectRepository.Add(ProductsInJson);
+            _productsObjectRepository.Add(products);
 
             DateTime endTime = DateTime.Now;
             TimeSpan SpendedTime = endTime.Subtract(startTime);
@@ -51,9 +49,9 @@ namespace DatabaseBenchmark.Domain.Service
             return SpendedTime;
         }
 
-        public JsonObject GetSingleKeysProduct(string key)
+        public ProductsObject GetSingleKeysProduct(string key)
         {
-            JsonObject data = _jsonObjectRepository.GetSingle(x => x.ProductKey == key);
+            var data = _productsObjectRepository.GetSingle(x => x.Key == key);
             return data;
         }
 
