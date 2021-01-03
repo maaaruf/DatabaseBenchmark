@@ -6,9 +6,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace DatabaseBenchmark.Domain.Repositories
+namespace DatabaseBenchmark.Domain.Repositories.BaseRepository
 {
-    public class Repository<TEntity, TSession>
+    public class Repository<TEntity, TSession> : IRepository<TEntity>
         where TEntity : class
         where TSession : IDbSession
     {
@@ -27,7 +27,6 @@ namespace DatabaseBenchmark.Domain.Repositories
             }    
         }
 
-
         public virtual void Add(IList<TEntity> entities)
         {
             using (ISession session = _mySqlSession.SessionOpen())
@@ -40,9 +39,9 @@ namespace DatabaseBenchmark.Domain.Repositories
                         {
                             session.Save(entity);
                         }
-                        catch
+                        catch(Exception e)
                         {
-                            throw new Exception("Faild to save data");
+                            throw new Exception("Faild to save data for exception: "+e);
                         }
                     }
 
@@ -53,10 +52,10 @@ namespace DatabaseBenchmark.Domain.Repositories
                             transaction.Commit();
                         }
                     }
-                    catch
+                    catch(Exception e)
                     {
                         transaction.Rollback();
-                        throw new Exception("Transection was faild");
+                        throw new Exception("Transection was faild for exception: " + e);
                     }
                 }
             }

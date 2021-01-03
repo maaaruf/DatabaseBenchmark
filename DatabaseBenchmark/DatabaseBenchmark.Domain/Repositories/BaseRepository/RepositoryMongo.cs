@@ -6,9 +6,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace DatabaseBenchmark.Domain.Repositories
+namespace DatabaseBenchmark.Domain.Repositories.BaseRepository
 {
-    public class RepositoryMongo<TEntity, TSession>
+    public class RepositoryMongo<TEntity, TSession> : IRepository<TEntity>
         where TSession : DBBenchmarkMongoSession
     {
         private IMongoDatabase _session;
