@@ -6,11 +6,16 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Benchmark.MVC.Web.Models;
+using Autofac;
+using Autofac.Integration.Mvc;
+using DatabaseBenchmark.Domain;
+using System.Web.Mvc;
 
 namespace Benchmark.MVC.Web
 {
     public partial class Startup
     {
+        public static ILifetimeScope AutofacContainer { get; private set; }
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
@@ -63,6 +68,24 @@ namespace Benchmark.MVC.Web
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+
+            var builder = new ContainerBuilder();
+            //connectionStringName = "DefaultConnection";
+
+            //Registering Dependency
+            builder.RegisterControllers(typeof(MvcApplication).Assembly);
+            builder.RegisterFilterProvider();
+            builder.RegisterSource(new ViewRegistrationSource());
+
+            //Module for Domain
+            builder.RegisterModule(new DBBenchmarkModule());
+
+
+            var container = builder.Build();
+            AutofacContainer = container;
+
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
     }
 }
