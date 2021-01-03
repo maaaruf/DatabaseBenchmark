@@ -18,7 +18,6 @@ namespace Benchmark.MVC.Web.Models
         public DateTime EndTime { get; set; }
         public IList<JsonObject> ProductsObjectInJson { get; set; }
 
-
         public ProductsObject PullData(string key)
         {
             StartTime = DateTime.Now;
