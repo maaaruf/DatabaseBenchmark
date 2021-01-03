@@ -1,5 +1,6 @@
 ﻿using DatabaseBenchmark.Domain.Entity;
 using DatabaseBenchmark.Domain.Repositories;
+using DatabaseBenchmark.Domain.Repositories.BaseRepository;
 using DatabaseBenchmark.Domain.Session;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace DatabaseBenchmark.Domain.Service
 
             while (dataCount > 0)
             {
-                productsList.Add(new ProductsObject { Key = Guid.NewGuid().ToString(), Products = products });
+                productsList.Add(new ProductsObject { ProductKey = Guid.NewGuid().ToString(), Products = products });
                 dataCount--;
             }
 
@@ -50,7 +51,7 @@ namespace DatabaseBenchmark.Domain.Service
 
         public ProductsObject GetSingleKeysProduct(string key)
         {
-            var data = _jsonObjectRepository.GetSingle(x => x.Key == key);
+            var data = _jsonObjectRepository.GetSingle(x => x.ProductKey == key);
             return data;
         }
 
