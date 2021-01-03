@@ -8,7 +8,9 @@ namespace DatabaseBenchmark.Domain.Entity
     public class ProductsObject
     {
         [BsonId]
-        public virtual string Key { get; set; }
+        public virtual string ProductKey { get; set; }
         public virtual IList<Product> Products { get; set; }
+        [BsonIgnore]
+        public virtual string ProductValue { get; set; }
     }
 }
