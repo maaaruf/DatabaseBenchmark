@@ -7,7 +7,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.JsonDataCount, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.JsonDataCount, new { @class = "form-control", min = "0", oninput = "validity.valid||(value='');", dir = "rtl" })
+            @Html.TextBoxFor(m => m.JsonDataCount, new { @class = "form-control", Type="number", min = "0", oninput = "validity.valid||(value='');", dir = "rtl" })
         </div>
     </div>
     <div class="form-group">
