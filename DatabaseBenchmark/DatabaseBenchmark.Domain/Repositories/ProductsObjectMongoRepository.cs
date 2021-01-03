@@ -1,4 +1,5 @@
 ﻿using DatabaseBenchmark.Domain.Entity;
+using DatabaseBenchmark.Domain.Repositories.BaseRepository;
 using DatabaseBenchmark.Domain.Session;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ namespace DatabaseBenchmark.Domain.Repositories
 {
     public class ProductsObjectMongoRepository : RepositoryMongo<ProductsObject, DBBenchmarkMongoSession>, IProductsObjectRepository
     {
-        public ProductsObjectMongoRepository() : base(new DBBenchmarkMongoSession("dbb"), "productscopy")
+        public ProductsObjectMongoRepository(DBBenchmarkMongoSession session, string tableName) : base(session, tableName)
         {
         }
     }
