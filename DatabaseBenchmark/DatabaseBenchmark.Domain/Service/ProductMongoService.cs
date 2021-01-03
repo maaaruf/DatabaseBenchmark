@@ -21,16 +21,16 @@ namespace DatabaseBenchmark.Domain.Service
         }
 
 
-        public IList<ProductsObject> GenerateJsonProducts(int dataCount)
+        public IList<ProductsObject> GenerateJsonProducts(int productListNumber)
         {
             IList<ProductsObject> productsList = new List<ProductsObject>();
 
             IList<Product> products = _randomDataGenerator.GenerateProducts(100);
 
-            while (dataCount > 0)
+            while (productListNumber > 0)
             {
                 productsList.Add(new ProductsObject { ProductKey = Guid.NewGuid().ToString(), Products = products });
-                dataCount--;
+                productListNumber--;
             }
 
             return productsList;
