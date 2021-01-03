@@ -9,7 +9,7 @@ using System.Text;
 
 namespace DatabaseBenchmark.Domain.Session
 {
-    public class LoadTestMySqlSession : IMySqlSession
+    public class LoadTestMySqlSession : IDbSession
     {
         private ISessionFactory _session;
 

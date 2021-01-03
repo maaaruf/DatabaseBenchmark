@@ -16,10 +16,15 @@ using System.Configuration;
 
 namespace DatabaseBenchmark.Domain.Session
 {
-    public class DBBenchmarkMySqlSession : IMySqlSession
+    public class DBBenchmarkMySqlSession : IDbSession
     {
         private ISessionFactory _session;
-       
+        public string _connectionStringName { get; set; }
+
+        public DBBenchmarkMySqlSession(string connectionStringName)
+        {
+            _connectionStringName = connectionStringName;
+        }
 
         public ISessionFactory CreateSession()
         {
@@ -29,11 +34,11 @@ namespace DatabaseBenchmark.Domain.Session
                 return _session;
             }
 
-            string connection = ConfigurationManager.ConnectionStrings["DBBenchmarkMySqlConnection"].ToString();
+            string connectionString = ConfigurationManager.ConnectionStrings[_connectionStringName].ToString();
 
             FluentConfiguration _config = Fluently.Configure()
-               .Database(MySQLConfiguration.Standard.ConnectionString(connection))
-                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JsonObjectMap>());
+               .Database(MySQLConfiguration.Standard.ConnectionString(connectionString))
+                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<ProductsObjectMap>());
             
 
             _session = _config.BuildSessionFactory();

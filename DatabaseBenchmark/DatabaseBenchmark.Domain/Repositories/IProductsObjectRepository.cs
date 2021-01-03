@@ -7,11 +7,8 @@ using System.Text;
 
 namespace DatabaseBenchmark.Domain.Repositories
 {
-    public class ProductKeyRepository : Repository<ProductKey, LoadTestMySqlSession>, IProductKeyRepository
+    public interface IProductsObjectRepository : IRepository<ProductsObject>
     {
-        public ProductKeyRepository(LoadTestMySqlSession loadTestMySqlSession) : base(loadTestMySqlSession)
-        {
 
-        }
     }
 }

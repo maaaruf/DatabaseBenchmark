@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseBenchmark.Domain.Service
 {
-    public class ObjectToJsonConverterService
+    public class ObjectToJsonConverterService : IObjectToJsonConverterService
     {
         public string Convert(object rawObject)
         {

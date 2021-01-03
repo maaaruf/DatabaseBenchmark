@@ -7,11 +7,10 @@ using System.Text;
 
 namespace DatabaseBenchmark.Domain.Repositories
 {
-    public class ProductKeyRepository : Repository<ProductKey, LoadTestMySqlSession>, IProductKeyRepository
+    public class ProductsObjectMongoRepository : RepositoryMongo<ProductsObject, DBBenchmarkMongoSession>, IProductsObjectRepository
     {
-        public ProductKeyRepository(LoadTestMySqlSession loadTestMySqlSession) : base(loadTestMySqlSession)
+        public ProductsObjectMongoRepository(DBBenchmarkMongoSession session, string tableName) : base(session, tableName)
         {
-
         }
     }
 }

@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace DatabaseBenchmark.Domain.Service
 {
-    public class RandomDataGeneratorService
+    public class RandomDataGeneratorService : IRandomDataGeneratorService
     {
-        public IList<Product> Products { get; set; }
-
         public IList<Product> GenerateProducts(int productCount)
         {
             IList<Product> Products = new List<Product>();
@@ -36,8 +34,4 @@ namespace DatabaseBenchmark.Domain.Service
         }
 
     }
-
-
-
-
 }

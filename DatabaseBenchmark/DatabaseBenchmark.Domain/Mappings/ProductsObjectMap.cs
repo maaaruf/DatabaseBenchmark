@@ -6,13 +6,13 @@ using System.Text;
 
 namespace DatabaseBenchmark.Domain.Mappings
 {
-    public class JsonObjectMap : ClassMap<JsonObject>
+    public class ProductsObjectMap : ClassMap<ProductsObject>
     {
-        public JsonObjectMap()
+        public ProductsObjectMap()
         {
             Id(x => x.ProductKey);
             Map(x => x.ProductValue);
-            Table("productskey");
+            Table("products");
         }
     }
 }

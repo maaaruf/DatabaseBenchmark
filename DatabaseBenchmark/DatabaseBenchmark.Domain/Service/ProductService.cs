@@ -7,43 +7,46 @@ using System.Text;
 
 namespace DatabaseBenchmark.Domain.Service
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
-        public RandomDataGeneratorService _randomDataGenerator { get; set; }
-        public ObjectToJsonConverterService _objectToJsonConverter { get; set; }
-        public JsonObjectRepository _jsonObjectRepository { get; set; }
-        public ProductKeyRepository _productKeyRepository { get; set; }
-        public ProductService()
+        public IRandomDataGeneratorService _randomDataGenerator { get; set; }
+        public IObjectToJsonConverterService _objectToJsonConverter { get; set; }
+        public IProductsObjectRepository _productsObjectRepository { get; set; }
+        public IProductKeyRepository _productKeyRepository { get; set; }
+        public ProductService(
+            IProductsObjectRepository productsObjectRepository,
+            IRandomDataGeneratorService randomDataGeneratorService,
+            IObjectToJsonConverterService objectToJsonConverterService,
+            IProductKeyRepository productKeyRepository)
         {
-            _randomDataGenerator = new RandomDataGeneratorService();
-            _objectToJsonConverter = new ObjectToJsonConverterService();
-            _jsonObjectRepository = new JsonObjectRepository(new DBBenchmarkMySqlSession());
-            _productKeyRepository = new ProductKeyRepository(new LoadTestMySqlSession());
+            _randomDataGenerator = randomDataGeneratorService;
+            _objectToJsonConverter = objectToJsonConverterService;
+            _productsObjectRepository = productsObjectRepository;
+            _productKeyRepository = productKeyRepository;
         }
 
 
-        public IList<JsonObject> GenerateJsonProducts(int dataCount)
+        public IList<ProductsObject> GenerateJsonProducts(int dataCount)
         {
-            IList<JsonObject> ProductsInJson = new List<JsonObject>();
+            IList<ProductsObject> productsList = new List<ProductsObject>();
+
+            IList<Product> products = _randomDataGenerator.GenerateProducts(100);
 
             while (dataCount > 0)
             {
-                IList<Product> products = _randomDataGenerator.GenerateProducts(100);
-                var product = new JsonProducts { Key = Guid.NewGuid().ToString(), Products = products };
-                string json = _objectToJsonConverter.Convert(product);
-                JsonObject productData = new JsonObject { ProductKey = product.Key, ProductValue = json };
-                ProductsInJson.Add(productData);
+                string jsonProducts = _objectToJsonConverter.Convert(products);
+                productsList.Add(new ProductsObject { ProductKey = Guid.NewGuid().ToString(), Products = products, ProductValue = jsonProducts });
                 dataCount--;
             }
 
-            return ProductsInJson;
+            return productsList;
         }
 
-        public TimeSpan InsertProducts(IList<JsonObject> ProductsInJson)
+        public TimeSpan InsertProducts(IList<ProductsObject> products)
         {
             DateTime startTime = DateTime.Now;
 
-            _jsonObjectRepository.Add(ProductsInJson);
+            _productsObjectRepository.Add(products);
 
             DateTime endTime = DateTime.Now;
             TimeSpan SpendedTime = endTime.Subtract(startTime);
@@ -51,9 +54,9 @@ namespace DatabaseBenchmark.Domain.Service
             return SpendedTime;
         }
 
-        public JsonObject GetSingleKeysProduct(string key)
+        public ProductsObject GetSingleKeysProduct(string key)
         {
-            JsonObject data = _jsonObjectRepository.GetSingle(x => x.ProductKey == key);
+            var data = _productsObjectRepository.GetSingle(x => x.ProductKey == key);
             return data;
         }
 
