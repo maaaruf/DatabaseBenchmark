@@ -9,16 +9,20 @@ namespace DatabaseBenchmark.Domain.Service
 {
     public class ProductService : IProductService
     {
-        public RandomDataGeneratorService _randomDataGenerator { get; set; }
-        public ObjectToJsonConverterService _objectToJsonConverter { get; set; }
-        public ProductsObjectMongoRepository _productsObjectRepository { get; set; }
-        public ProductKeyRepository _productKeyRepository { get; set; }
-        public ProductService()
+        public IRandomDataGeneratorService _randomDataGenerator { get; set; }
+        public IObjectToJsonConverterService _objectToJsonConverter { get; set; }
+        public IProductsObjectRepository _productsObjectRepository { get; set; }
+        public IProductKeyRepository _productKeyRepository { get; set; }
+        public ProductService(
+            IProductsObjectRepository productsObjectRepository,
+            IRandomDataGeneratorService randomDataGeneratorService,
+            IObjectToJsonConverterService objectToJsonConverterService,
+            IProductKeyRepository productKeyRepository)
         {
-            _randomDataGenerator = new RandomDataGeneratorService();
-            _objectToJsonConverter = new ObjectToJsonConverterService();
-            _productsObjectRepository = new ProductsObjectMongoRepository();
-            _productKeyRepository = new ProductKeyRepository(new LoadTestMySqlSession());
+            _randomDataGenerator = randomDataGeneratorService;
+            _objectToJsonConverter = objectToJsonConverterService;
+            _productsObjectRepository = productsObjectRepository;
+            _productKeyRepository = productKeyRepository;
         }
 
 
@@ -30,7 +34,8 @@ namespace DatabaseBenchmark.Domain.Service
 
             while (dataCount > 0)
             {
-                productsList.Add(new ProductsObject { Key = Guid.NewGuid().ToString(), Products = products });
+                string jsonProducts = _objectToJsonConverter.Convert(products);
+                productsList.Add(new ProductsObject { ProductKey = Guid.NewGuid().ToString(), Products = products, ProductValue = jsonProducts });
                 dataCount--;
             }
 
@@ -51,7 +56,7 @@ namespace DatabaseBenchmark.Domain.Service
 
         public ProductsObject GetSingleKeysProduct(string key)
         {
-            var data = _productsObjectRepository.GetSingle(x => x.Key == key);
+            var data = _productsObjectRepository.GetSingle(x => x.ProductKey == key);
             return data;
         }
 
