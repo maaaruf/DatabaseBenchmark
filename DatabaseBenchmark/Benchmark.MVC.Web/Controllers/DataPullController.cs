@@ -27,7 +27,7 @@ namespace Benchmark.MVC.Web.Controllers
         [HttpPost]
         public ActionResult Index(DataPullModel model)
         {
-            var data = model.PullMongoData(model.Key);
+            var data = model.PullData(model.Key);
 
             //Log.Error($"Time taken : {model.TotalSpendedTime}");
 
