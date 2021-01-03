@@ -13,7 +13,7 @@ namespace Benchmark.MVC.Web.Models
     {
         public RandomDataGeneratorService _randomDataGenerator { get; set; }
         public ObjectToJsonConverterService _objectToJsonConverter { get; set; }
-        public JsonObjectRepository _jsonObjectRepository { get; set; }
+        public ProductsObjectRepository _jsonObjectRepository { get; set; }
         public ProductKeyRepository _productKeyRepository { get; set; }
         public ProductMongoService _productService { get; set; }
         public BaseModel()
@@ -21,7 +21,7 @@ namespace Benchmark.MVC.Web.Models
             _productService = new ProductMongoService();
             _randomDataGenerator = new RandomDataGeneratorService();
             _objectToJsonConverter = new ObjectToJsonConverterService();
-            _jsonObjectRepository = new JsonObjectRepository(new DBBenchmarkMySqlSession());
+            _jsonObjectRepository = new ProductsObjectRepository(new DBBenchmarkMySqlSession());
             _productKeyRepository = new ProductKeyRepository(new LoadTestMySqlSession());
         }
     }

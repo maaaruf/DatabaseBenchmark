@@ -11,24 +11,24 @@ namespace DatabaseBenchmark.Domain.Service
     {
         public RandomDataGeneratorService _randomDataGenerator { get; set; }
         public ObjectToJsonConverterService _objectToJsonConverter { get; set; }
-        public RepositoryMongo<JsonProducts, DBBenchmarkMongoSession> _jsonObjectRepository { get; set; }
+        public RepositoryMongo<ProductsObject, DBBenchmarkMongoSession> _jsonObjectRepository { get; set; }
         public ProductMongoService()
         {
             _randomDataGenerator = new RandomDataGeneratorService();
             _objectToJsonConverter = new ObjectToJsonConverterService();
-            _jsonObjectRepository = new RepositoryMongo<JsonProducts, DBBenchmarkMongoSession>(new DBBenchmarkMongoSession("dbb"),"products");
+            _jsonObjectRepository = new RepositoryMongo<ProductsObject, DBBenchmarkMongoSession>(new DBBenchmarkMongoSession("dbb"),"products");
         }
 
 
-        public IList<JsonProducts> GenerateJsonProducts(int dataCount)
+        public IList<ProductsObject> GenerateJsonProducts(int dataCount)
         {
-            IList<JsonProducts> productsList = new List<JsonProducts>();
+            IList<ProductsObject> productsList = new List<ProductsObject>();
 
             IList<Product> products = _randomDataGenerator.GenerateProducts(100);
 
             while (dataCount > 0)
             {
-                productsList.Add(new JsonProducts { Key = Guid.NewGuid().ToString(), Products = products });
+                productsList.Add(new ProductsObject { Key = Guid.NewGuid().ToString(), Products = products });
                 dataCount--;
             }
 
@@ -36,7 +36,7 @@ namespace DatabaseBenchmark.Domain.Service
         }
 
 
-        public TimeSpan InsertProducts(IList<JsonProducts> products)
+        public TimeSpan InsertProducts(IList<ProductsObject> products)
         {
             DateTime startTime = DateTime.Now;
 
@@ -48,7 +48,7 @@ namespace DatabaseBenchmark.Domain.Service
             return SpendedTime;
         }
 
-        public JsonProducts GetSingleKeysProduct(string key)
+        public ProductsObject GetSingleKeysProduct(string key)
         {
             var data = _jsonObjectRepository.GetSingle(x => x.Key == key);
             return data;

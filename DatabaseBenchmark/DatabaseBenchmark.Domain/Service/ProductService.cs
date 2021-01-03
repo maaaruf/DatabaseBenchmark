@@ -11,13 +11,13 @@ namespace DatabaseBenchmark.Domain.Service
     {
         public RandomDataGeneratorService _randomDataGenerator { get; set; }
         public ObjectToJsonConverterService _objectToJsonConverter { get; set; }
-        public JsonObjectRepository _jsonObjectRepository { get; set; }
+        public ProductsObjectRepository _jsonObjectRepository { get; set; }
         public ProductKeyRepository _productKeyRepository { get; set; }
         public ProductService()
         {
             _randomDataGenerator = new RandomDataGeneratorService();
             _objectToJsonConverter = new ObjectToJsonConverterService();
-            _jsonObjectRepository = new JsonObjectRepository(new DBBenchmarkMySqlSession());
+            _jsonObjectRepository = new ProductsObjectRepository(new DBBenchmarkMySqlSession());
             _productKeyRepository = new ProductKeyRepository(new LoadTestMySqlSession());
         }
 
@@ -29,7 +29,7 @@ namespace DatabaseBenchmark.Domain.Service
             while (dataCount > 0)
             {
                 IList<Product> products = _randomDataGenerator.GenerateProducts(100);
-                var product = new JsonProducts { Key = Guid.NewGuid().ToString(), Products = products };
+                var product = new ProductsObject { Key = Guid.NewGuid().ToString(), Products = products };
                 string json = _objectToJsonConverter.Convert(product);
                 JsonObject productData = new JsonObject { ProductKey = product.Key, ProductValue = json };
                 ProductsInJson.Add(productData);

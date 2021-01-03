@@ -31,7 +31,7 @@ namespace Benchmark.MVC.Web.Models
                 return data.ProductValue;
         }
 
-        public JsonProducts PullMongoData(string key)
+        public ProductsObject PullMongoData(string key)
         {
             StartTime = DateTime.Now;
             var data = _productService.GetSingleKeysProduct(key);
